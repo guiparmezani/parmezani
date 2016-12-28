@@ -8568,6 +8568,11 @@ aside.widget {
 .gallery-caption {
   display: block; }
 
+.page-template-template-home .page-wrapper {
+  background-color: #555;
+  height: 100vh;
+  weight: 100vw; }
+
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style

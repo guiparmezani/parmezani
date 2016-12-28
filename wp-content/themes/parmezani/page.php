@@ -63,12 +63,12 @@ if ( class_exists( 'WooCommerce' ) ) {
 		</div><!-- #primary -->
 
 		<!-- Do the right sidebar check -->
-		<?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
+		<?php //if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
 
-			<?php if ( ! $is_woocommerce ) : get_sidebar( 'right' ); ?>
-			<?php endif; ?>
+			<?php //if ( ! $is_woocommerce ) : get_sidebar( 'right' ); ?>
+			<?php //endif; ?>
 
-		<?php endif; ?>
+		<?php //endif; ?>
 
 	</div><!-- .row -->
 
