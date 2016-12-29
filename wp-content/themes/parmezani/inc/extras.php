@@ -72,3 +72,7 @@ if ( ! function_exists( 'change_logo_class' ) ) {
 		return $html;
 	}
 }
+
+if(function_exists('acf_add_options_page')) { 
+  acf_add_options_page();
+}

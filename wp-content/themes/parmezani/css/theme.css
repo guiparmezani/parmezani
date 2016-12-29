@@ -8568,10 +8568,77 @@ aside.widget {
 .gallery-caption {
   display: block; }
 
+p, span, a {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: #FFF;
+  font-size: 14px; }
+
+h1 {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 36px;
+  font-weight: bold; }
+
+hr {
+  max-width: 60px;
+  border-top: 3px solid #2bafca;
+  margin: 1rem 0 2rem; }
+
+header {
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  padding: 25px 0; }
+  header nav.navbar {
+    background: transparent;
+    padding: 0; }
+    header nav.navbar .navbar-brand {
+      font-family: "PT Sans Narrow", sans-serif;
+      font-size: 32px;
+      font-weight: bold;
+      color: #2bafca; }
+
 .page-template-template-home .page-wrapper {
   background-color: #555;
-  height: 100vh;
-  weight: 100vw; }
+  background-position: 50% 50%;
+  background-size: 110%;
+  height: 100vh; }
+  .page-template-template-home .page-wrapper .site-main {
+    height: 100vh; }
+    .page-template-template-home .page-wrapper .site-main .hero-content-wrapper {
+      -moz-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      width: 100%;
+      padding: 0 15px; }
+      .page-template-template-home .page-wrapper .site-main .hero-content-wrapper .hero-title h1 {
+        color: #FFF;
+        font-size: 121px; }
+      .page-template-template-home .page-wrapper .site-main .hero-content-wrapper .hero-text p {
+        font-size: 24px; }
+
+@media (min-width: 768px) {
+  .page-template-template-home .page-wrapper .hero-content-wrapper .hero-text-wrapper {
+    width: 40%; } }
+
+@media (max-width: 767px) {
+  .page-template-template-home .page-wrapper {
+    background-size: cover; }
+    .page-template-template-home .page-wrapper .hero-content-wrapper .hero-text-wrapper {
+      width: 50%; }
+      .page-template-template-home .page-wrapper .hero-content-wrapper .hero-text-wrapper .hero-title {
+        font-size: 36px; } }
+
+.screen-center {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0; }
 
 /*
 * Use existing Bootstrap 4 classes and

@@ -96,7 +96,7 @@ gulp.task('sass', function () {
 // Run:
 // gulp watch
 // Starts watcher. Watcher runs gulp sass task on changes
-gulp.task('watch', function () {
+gulp.task('watch', ['browser-sync'], function () {
     gulp.watch('./sass/**/*.scss', ['sass']);
     gulp.watch('./css/theme.css', ['cssnano']);
     gulp.watch([basePaths.dev + 'js/**/*.js'], ['scripts'])
@@ -151,7 +151,8 @@ gulp.task('scripts', function() {
 
         // End - All BS4 stuff
 
-        basePaths.dev + 'js/skip-link-focus-fix.js'
+        basePaths.dev + 'js/skip-link-focus-fix.js',
+        basePaths.dev + 'js/main.js'
     ];
   gulp.src(scripts)
     .pipe(concat('theme.min.js'))
