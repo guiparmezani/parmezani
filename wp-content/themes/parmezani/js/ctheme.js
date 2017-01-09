@@ -5288,13 +5288,11 @@ var mX, mY, distance, bgBenderX, bgBenderX,
 $element  = $('.screen-center');
 
 function calculateDistance(elem, mouseX, mouseY) {
-  console.log('y: ' + mouseY);
-  console.log(mouseX);
   return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
 }
 
 if ($(window).width() > 787) {
-  $(document).mousemove(function(e) {
+  $('.hero-area').mousemove(function(e) {
     mX = e.pageX;
     mY = e.pageY;
     distance = calculateDistance($element, mX, mY);
@@ -5302,7 +5300,7 @@ if ($(window).width() > 787) {
     bgBenderX = (mX / 50) + 50;
     bgBenderY = (mY / 50) + 50;
 
-    $('.page-wrapper').css('background-position', bgBenderX + '% ' + bgBenderY + '%');
+    $('.hero-area').css('background-position', bgBenderX + '% ' + bgBenderY + '%');
 
 
   });
