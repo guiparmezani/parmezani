@@ -24,6 +24,7 @@
     "tests"
   ],
   "dependencies": {
+    "jquery.scrollTo": "^2.1.2"
   },
   "_source": "https://github.com/holger1411/understrap.git",
   "_target": "~0.5.1",

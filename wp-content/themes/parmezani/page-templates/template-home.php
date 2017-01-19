@@ -19,24 +19,33 @@ get_header();
 
 			<div class="screen-center hidden"></div>
 			
-			<div class="hero-area" style="background-image: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.55)), url(<?php echo $home_background; ?>);">
+			<div class="hero-area" style="background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url(<?php echo $home_background; ?>);">
 				<div class="container">
 					<div class="hero-content-wrapper">
 						<div class="hero-text-wrapper">
 							<div class="hero-title">
-								<h1><?php the_field('hero_title'); ?></h1>
-							</div>
-							<hr>
-							<div class="hero-text">
-								<p><?php the_field('hero_text'); ?></p>
+								<!-- <h1><?php the_field('hero_title'); ?></h1> -->
+								<h1 class="type" data-text="<?php the_field('hero_title'); ?>"><strong id="caption"></strong></h1>
 							</div>
 						</div>	
 					</div>
+					<div class="hero-text">
+						<p class="text-center"><?php the_field('hero_text'); ?></p>
+					</div>
+				  <span class="scroll-btn">
+						<a href="#huge-navs" class="anchor-link">
+							<span class="mouse">
+								<span>
+								</span>
+							</span>
+						</a>
+					</span>
 				</div>
+
 			</div>
 
 
-			<section class="huge-navs">
+			<section class="huge-navs" id="huge-navs">
 				<div class="huge-navs-wrapper">
 					<div class="container-fluid">
 						<div class="row">

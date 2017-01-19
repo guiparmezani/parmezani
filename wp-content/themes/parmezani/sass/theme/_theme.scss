@@ -2,11 +2,11 @@
 p, span, a {
 	font-family: $font-roboto;
 	font-weight: normal;
-	color: #FFF;
+	color: $brand-black;
 	font-size: 14px;
 	&:hover {
 		text-decoration: none;
-		color: #FFF;
+		color: $brand-black;
 	}
 }
 
@@ -24,8 +24,7 @@ h2 {
 
 hr {
 	max-width: 60px;
-	border-top: 3px solid $brand-blue;
-	margin: 1rem 0 2rem;
+	border-top: 3px solid $brand-black;
 }
 
 .vertical-horizontal-center {
@@ -53,7 +52,7 @@ header {
 			font-family: $font-pt;
 			font-size: 32px;
 			font-weight: bold;
-			color: $brand-blue;
+			color: $brand-main;
 		}
 	}
 }
@@ -66,9 +65,10 @@ header {
 	.page-wrapper {
 		// transition: all .5s ease;
 		.hero-area {
-			background-color: #555;
+			// background-color: #555;
 			background-position: 50% 50%;
-			background-size: 110%;
+			// background-size: 110%;
+			background-repeat: repeat;
 			height: 100vh;
 			position: relative;
 			.container {
@@ -82,16 +82,28 @@ header {
 				position: absolute;
 				width: 100%;
 				padding: 0 15px;
+				.hero-text-wrapper {
+					text-align: center;
+					margin: 0 auto;
+				}
 				.hero-title {
 					h1 {
-						color: #FFF;
+						color: $brand-main;
 						font-size: 121px;
 					}
 				}
-				.hero-text {
-					p {
-						font-size: 24px;
-					}
+			}
+			.hero-text {
+				-webkit-transform: translateX(-50%);
+		    -moz-transform: translateX(-50%);
+		    transform: translateX(-50%);
+		    left: 50%;
+				position: absolute;
+				bottom: 50px;
+				width: 80vw;
+				text-align: center;
+				p {
+					font-size: 24px;
 				}
 			}
 		}
@@ -133,7 +145,8 @@ header {
 							// -webkit-transform: rotateX(360deg) translate(-50%, -50%);
 							// -moz-transform: rotateX(360deg) translate(-50%, -50%);
 							// transform: rotateX(360deg) translate(-50%, -50%);
-							color: $brand-black;
+							color: $brand-main;
+							background-color: white;
 						}
 					}
 				}
@@ -145,7 +158,16 @@ header {
 		.page-wrapper {
 			.hero-content-wrapper {
 				.hero-text-wrapper {
-					width: 40%;
+				}
+			}
+			.hero-text {
+				max-width: 40vw;
+		    transition: all .6s ease;
+				opacity: 0;
+		    bottom: 0;
+				&.animated {
+					opacity: 1;
+		    	bottom: 100px;
 				}
 			}
 		}
@@ -177,3 +199,121 @@ header {
 	top: 0;
 }
 //--- Extra stuff
+
+
+
+@-webkit-keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+@-moz-keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+@keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+ .scroll-btn {
+ 	transition: opacity .8s ease;
+	display: block;
+	position: absolute;
+	opacity: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	&.animated {
+		opacity: 1;
+	}
+}
+.scroll-btn > * {
+	display: inline-block;
+	line-height: 18px;
+	font-size: 13px;
+	font-weight: normal;
+	color: #7f8c8d;
+	color: $brand-black;
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	letter-spacing: 2px;
+}
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *.active {
+	color: $brand-black;
+}
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *:active,
+.scroll-btn > *.active {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+.scroll-btn .mouse {
+	position: relative;
+	display: block;
+	width: 35px;
+	height: 55px;
+	margin: 0 auto 20px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 3px solid $brand-black;
+	border-radius: 23px;
+}
+.scroll-btn .mouse > * {
+	position: absolute;
+	display: block;
+	top: 29%;
+	left: 50%;
+	width: 8px;
+	height: 8px;
+	margin: -4px 0 0 -4px;
+	background: $brand-black;
+	border-radius: 50%;
+	-webkit-animation: ani-mouse 2.5s linear infinite;
+	-moz-animation: ani-mouse 2.5s linear infinite;
+	animation: ani-mouse 2.5s linear infinite;
+}
