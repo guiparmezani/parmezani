@@ -5548,13 +5548,13 @@ function calculateDistance(elem, mouseX, mouseY) {
 }
 
 if ($(window).width() > 787) {
-  $('.hero-area').mousemove(function(e) {
+  $('.hero-area, header').mousemove(function(e) {
     mX = e.pageX;
     mY = e.pageY;
     distance = calculateDistance($element, mX, mY);
     
     bgBenderX = (mX / 100) + 50;
-    bgBenderY = (mY / 15) + 50;
+    bgBenderY = (mY / 5) + 50;
 
     $('.hero-area').css('background-position', bgBenderX + '% ' + bgBenderY + '%');
 

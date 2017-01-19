@@ -76,3 +76,53 @@ if ( ! function_exists( 'change_logo_class' ) ) {
 if(function_exists('acf_add_options_page')) { 
   acf_add_options_page();
 }
+
+
+
+// Register Project Post Type
+function project_post_type() {
+
+  $labels = array(
+    'name'                => _x( 'Projects', 'Post Type General Name', 'roots' ),
+    'singular_name'       => _x( 'project', 'Post Type Singular Name', 'roots' ),
+    'menu_name'           => __( 'Projects', 'roots' ),
+    'name_admin_bar'      => __( 'project', 'roots' ),
+    'parent_item_colon'   => __( 'Parent project:', 'roots' ),
+    'all_items'           => __( 'All Projects', 'roots' ),
+    'add_new_item'        => __( 'Add New project', 'roots' ),
+    'add_new'             => __( 'Add New', 'roots' ),
+    'new_item'            => __( 'New project', 'roots' ),
+    'edit_item'           => __( 'Edit project', 'roots' ),
+    'update_item'         => __( 'Update project', 'roots' ),
+    'view_item'           => __( 'View project', 'roots' ),
+    'search_items'        => __( 'Search Projects', 'roots' ),
+    'not_found'           => __( 'Not found', 'roots' ),
+    'not_found_in_trash'  => __( 'Not found in Trash', 'roots' ),
+  );
+  $args = array(
+    'label'               => __( 'project', 'roots' ),
+    'description'         => __( 'Person Project', 'roots' ),
+    'labels'              => $labels,
+    'supports'            => array( 'title', 'editor', 'revisions', 'thumbnail'),
+    'taxonomies'          => array( 'projects' ),
+    'hierarchical'        => false,
+    'public'              => false,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'menu_position'       => 4,
+    'show_in_admin_bar'   => false,
+    'show_in_nav_menus'   => false,
+    'can_export'          => false,
+    'has_archive'         => false,
+    'exclude_from_search' => true,
+    'publicly_queryable'  => false,
+    'query_var'           => 'project',
+    'rewrite'             => false,
+    'capability_type'     => 'page',
+  );
+
+  register_post_type( 'project', $args );
+
+}
+
+add_action( 'init', 'project_post_type', 0 );
