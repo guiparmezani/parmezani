@@ -43,9 +43,16 @@ hr {
 	padding: 70px 0 80px;
 	.page-heading {
 		width: 100%;
+		margin-bottom: 90px;
 		h2 {
 			text-align: center;
 		}
+	}
+	@include media-breakpoint-down(sm){
+		.page-heading {
+			margin-bottom: 40px;
+		}
+
 	}
 }
 //--- Global
@@ -137,7 +144,7 @@ header {
 						transition: all .5s;
 						height: 70vh;
 						background-color: #000;
-						opacity: .4;
+						opacity: .5;
 					}
 					h2.huge-nav-text {
 						-webkit-transform: rotateX(0deg) translate(-50%, -50%);
@@ -168,15 +175,20 @@ header {
 		}
 
 		.portfolio-item-wrapper {
+			transition: all .6s ease;
+    	-webkit-filter: grayscale(100%);
+    	filter: grayscale(100%);
 			min-height: 500px;
-			cursor: pointer;
+			background-size: cover;
+    	background-position: center;
 			.portfolio-item-mask {
 				transition: .6s ease;
 		    // -webkit-filter: blur(3px);
-		    background-image: linear-gradient(rgba(250,250,241,0.4), rgba(250,250,241,0.4));
+		    // background-image: linear-gradient(rgba(250,250,241,0.4), rgba(250,250,241,0.4));
+		    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
 				right: 0;
 		    left: 0;
-		    opacity: 1;
+		    opacity: .5;
 		    // z-index: -1;
 		    height: 100%;
 		    position: absolute;
@@ -184,10 +196,59 @@ header {
 		    background-position: center;
 		    margin: 0 15px;
 			}
+			.block-content-wrapper {
+				transition: .6s ease;
+				position: absolute;
+				left: 45px;
+				top: 30px;
+				right: 45px;
+				bottom: 30px;
+				opacity: 0;
+				background-color: $brand-white;
+			}
+			h2 {
+				@extend .vertical-horizontal-center;
+				transition: .6s ease;
+				position: absolute;
+				z-index: 5;
+				color: $brand-white;
+				hr {
+					transition: .6s ease;
+					border-color: $brand-black;
+					opacity: 0;
+				}
+			}
+			.hover-show {
+				@extend .vertical-horizontal-center;
+				z-index: 5;
+				transition: 1s ease;
+				text-align: center;
+				position: absolute;
+				top: 55%;
+				opacity: 0;
+				p {
+					color: $brand-black;
+				}
+			}
 			&:hover {
+		    -webkit-filter: grayscale(0);
+		    filter: grayscale(0);
 				.portfolio-item-mask {
 		    	// -webkit-filter: blur(0px);
 		    	opacity: 0;
+				}
+				.block-content-wrapper {
+					opacity: 1;
+				}
+				h2 {
+					top: 35%;
+					color: $brand-black;
+					hr {
+						opacity: 1;
+					}
+				}
+				.hover-show {
+					opacity: 1;
 				}
 			}
 		}

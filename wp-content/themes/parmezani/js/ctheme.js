@@ -5508,7 +5508,7 @@ function type() {
   if (!caption) { return; }
   captionEl.html(breakPeriods(caption.substr(0, captionLength++)));
   if(captionLength < caption.length+1) {
-    setTimeout(type, 100);
+    setTimeout(type, 130);
   } else {
     captionLength = 0;
     caption = '';
@@ -5527,11 +5527,11 @@ setTimeout(function(){
 
 setTimeout(function(){
 	$('.hero-text').addClass('animated');
-}, 1500);
+}, 1900);
 
 setTimeout(function(){
 	$('.scroll-btn').addClass('animated');
-}, 3000);
+}, 3100);
 
 $('a.anchor-link').click(function(e){
 	e.preventDefault();
@@ -5554,7 +5554,7 @@ if ($(window).width() > 787) {
     distance = calculateDistance($element, mX, mY);
     
     bgBenderX = (mX / 100) + 50;
-    bgBenderY = (mY / 5) + 50;
+    bgBenderY = (mY / 4) + 50;
 
     $('.hero-area').css('background-position', bgBenderX + '% ' + bgBenderY + '%');
 

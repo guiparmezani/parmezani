@@ -100,10 +100,17 @@ get_header();
 								$background_image = get_the_post_thumbnail_url();
 							} ?>
 								<div class="col-sm-4">
-									<div class="portfolio-item-wrapper" style="background-image: url('<?php echo $background_image; ?>');">
-										<div class="portfolio-item-mask"></div>
-										<h2><?php the_title(); ?></h2>
-									</div>
+									<a href="<?php the_field('project_url'); ?>" target="_blank">
+										<div class="portfolio-item-wrapper" style="background-image: url('<?php echo $background_image; ?>');">
+											<div class="portfolio-item-mask"></div>
+											<h2><?php the_title(); ?><hr></h2>
+											<div class="hover-show">
+												<p><?php the_content(); ?></p>
+											</div>
+											<div class="block-content-wrapper">
+											</div>
+										</div>
+									</a>
 								</div>
 							<?php endwhile; ?>
 						</div>
