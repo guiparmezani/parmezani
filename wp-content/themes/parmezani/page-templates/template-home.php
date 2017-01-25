@@ -58,7 +58,9 @@ get_header();
 									<div class="huge-nav-content">
 										<div class="huge-nav-mask">
 										</div>
-										<h2 class="huge-nav-text"><?php the_field('huge_nav_text_1') ?></h2>
+										<h2 class="huge-nav-text"><?php the_field('huge_nav_text_1') ?>
+											<hr>
+										</h2>
 									</div>
 								</a>
 							</div>
@@ -68,7 +70,9 @@ get_header();
 									<div class="huge-nav-content">
 										<div class="huge-nav-mask">
 										</div>
-										<h2 class="huge-nav-text"><?php the_field('huge_nav_text_2') ?></h2>
+										<h2 class="huge-nav-text"><?php the_field('huge_nav_text_2') ?>
+											<hr>
+										</h2>
 									</div>
 								</a>
 							</div>
@@ -78,7 +82,9 @@ get_header();
 									<div class="huge-nav-content">
 										<div class="huge-nav-mask">
 										</div>
-										<h2 class="huge-nav-text"><?php the_field('huge_nav_text_3') ?></h2>
+										<h2 class="huge-nav-text"><?php the_field('huge_nav_text_3') ?>
+											<hr>
+										</h2>
 									</div>
 								</a>
 							</div>
@@ -87,10 +93,24 @@ get_header();
 				</div>
 			</section>
 
-			<section class="page-section my-work-section" id="my-work">
+			<section class="page-section about-section" id="about">
 				<div class="container">
 					<div class="page-heading">
-						<h2>MY WORK</h2>
+						<h2>ABOUT ME</h2>
+						<hr>
+					</div>
+					<div class="about-content">
+						<?php the_content(); ?>
+						<a href="#contact" class="btn-brand anchor-link">Hire Me</a>
+					</div>
+				</div>
+			</section>
+			
+			<section class="page-section recent-work-section" id="recent-work">
+				<div class="container">
+					<div class="page-heading">
+						<h2>RECENT WORK</h2>
+						<hr>
 					</div>
 					<div class="portfolio-nav">
 						<?php if($projects->have_posts()): ?>
@@ -116,6 +136,13 @@ get_header();
 						</div>
 						<?php endif; ?>
 					</div>
+				</div>
+			</section>
+
+			<section class="page-section contact-section" id="contact">
+				<div class="page-heading">
+					<h2>CONTACT</h2>
+					<hr>
 				</div>
 			</section>
 		</main><!-- #main -->
