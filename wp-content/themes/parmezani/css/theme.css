@@ -8606,6 +8606,9 @@ hr {
   .btn-brand:hover {
     color: #fafaf1;
     background-color: #5b00cc; }
+  .btn-brand:focus, .btn-brand:active, .btn-brand:hover {
+    color: #fafaf1;
+    text-decoration: none; }
 
 .vertical-horizontal-center, .page-template-template-home .page-wrapper .portfolio-item-wrapper h2, .page-template-template-home .page-wrapper .portfolio-item-wrapper .hover-show {
   -webkit-transform: translate(-50%, -50%);

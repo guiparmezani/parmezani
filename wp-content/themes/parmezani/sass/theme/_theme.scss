@@ -46,6 +46,10 @@ hr {
 		color: $brand-white;
 		background-color: darken($brand-purple, 10%);
 	}
+	&:focus, &:active, &:hover {
+		color: $brand-white;
+		text-decoration: none;
+	} 
 }
 
 .vertical-horizontal-center {
