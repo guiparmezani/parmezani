@@ -24,7 +24,8 @@
     "tests"
   ],
   "dependencies": {
-    "jquery.scrollTo": "^2.1.2"
+    "jquery.scrollTo": "^2.1.2",
+    "jquery-animate3d": "putnamn21/jquery-animate3d"
   },
   "_source": "https://github.com/holger1411/understrap.git",
   "_target": "~0.5.1",

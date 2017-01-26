@@ -153,6 +153,7 @@ gulp.task('scripts', function() {
 
         basePaths.dev + 'js/skip-link-focus-fix.js',
         basePaths.dev + 'js/jquery.scrollto.js',
+        basePaths.dev + 'js/jquery-animate3d.js',
         
         basePaths.dev + 'js/main.js'
     ];

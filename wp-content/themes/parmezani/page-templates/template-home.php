@@ -139,10 +139,29 @@ get_header();
 				</div>
 			</section>
 
+			<div class="huge-hire-btn-wrapper">
+				<a href="#contact" class="huge-hire-btn anchor-link">Take the first step.<br><br><br><span>HIRE ME</span></a>
+			</div>
+
 			<section class="page-section contact-section" id="contact">
 				<div class="page-heading">
 					<h2>CONTACT</h2>
 					<hr>
+				</div>
+				<div class="form-wrapper">
+					<form method="post" class="contact-form" id="contact-form">
+						<div class="col-sm-6">
+							<input name="name" type="text" placeholder="Name">
+						</div>
+						<div class="col-sm-6">
+							<input name="email" type="email" placeholder="Email">
+						</div>
+						<div class="col-sm-12">
+							<textarea name="message" placeholder="Message"></textarea>
+						</div>
+
+						<input type="submit" class="btn-brand" value="SUBMIT"></input>
+					</form>
 				</div>
 			</section>
 		</main><!-- #main -->

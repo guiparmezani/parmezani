@@ -8568,13 +8568,13 @@ aside.widget {
 .gallery-caption {
   display: block; }
 
-p, span, a {
+p, span, a, input, textarea {
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   color: #444;
   font-size: 20px;
   line-height: 35px; }
-  p:hover, span:hover, a:hover {
+  p:hover, span:hover, a:hover, input:hover, textarea:hover {
     text-decoration: none;
     color: #444; }
 
@@ -8610,6 +8610,27 @@ hr {
     color: #fafaf1;
     text-decoration: none; }
 
+.huge-hire-btn {
+  transition: all .12s;
+  font-weight: bold;
+  display: block;
+  width: 100vw;
+  text-align: center;
+  padding: 25vh 0;
+  background-color: #7200ff;
+  color: #fff;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 38px; }
+  .huge-hire-btn span {
+    font-size: 100px;
+    font-family: "Roboto Condensed", sans-serif;
+    color: #FFF; }
+  .huge-hire-btn:hover {
+    color: #fafaf1; }
+  .huge-hire-btn:focus, .huge-hire-btn:active, .huge-hire-btn:hover {
+    color: #fafaf1;
+    text-decoration: none; }
+
 .vertical-horizontal-center, .page-template-template-home .page-wrapper .portfolio-item-wrapper h2, .page-template-template-home .page-wrapper .portfolio-item-wrapper .hover-show {
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -8631,7 +8652,8 @@ hr {
     background-color: #fafaf1; }
   .page-section.about-section .about-content {
     max-width: 700px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding: 0 15px; }
     .page-section.about-section .about-content p {
       margin-bottom: 50px; }
   @media (max-width: 767px) {
@@ -8736,8 +8758,8 @@ header {
 
 .page-template-template-home .page-wrapper .portfolio-item-wrapper {
   transition: all .6s ease;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
   min-height: 500px;
   background-size: cover;
   background-position: center; }
@@ -8794,6 +8816,22 @@ header {
     .page-template-template-home .page-wrapper .portfolio-item-wrapper:hover .hover-show {
       opacity: 1; }
 
+.page-template-template-home .page-wrapper .form-wrapper {
+  max-width: 700px;
+  margin: 0 auto; }
+  .page-template-template-home .page-wrapper .form-wrapper textarea, .page-template-template-home .page-wrapper .form-wrapper input:not([type="submit"]) {
+    padding: 30px;
+    border: 1px solid #ccc; }
+  .page-template-template-home .page-wrapper .form-wrapper textarea {
+    display: block;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    min-height: 250px; }
+  .page-template-template-home .page-wrapper .form-wrapper input[type="text"], .page-template-template-home .page-wrapper .form-wrapper input[type="email"] {
+    width: 100%; }
+
 @media (min-width: 768px) {
   .page-template-template-home .page-wrapper .hero-text {
     max-width: 40vw;
@@ -8811,6 +8849,9 @@ header {
       width: 50%; }
       .page-template-template-home .page-wrapper .hero-content-wrapper .hero-text-wrapper .hero-title {
         font-size: 36px; } }
+
+#wrapper-footer {
+  background-color: #444; }
 
 .screen-center {
   display: none;

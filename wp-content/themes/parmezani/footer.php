@@ -25,6 +25,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="site-info">
 						<!-- content goes here -->
+						<p>macaco</p>
 					</div><!-- .site-info -->
 
 				</footer><!-- #colophon -->
