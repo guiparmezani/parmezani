@@ -5681,5 +5681,54 @@ if ($(window).width() > 787) {
 
 $('.huge-hire-btn-wrapper').animate3d({rotation: 0.075});
 
+$("#contact-form").submit(function(event) {
+  event.preventDefault();
+
+  var errors = false;
+
+  if ($('#name-input').val().length < 1) {
+    errors = true;
+    $('#name-input').css('background', 'pink');
+  } else {
+    $('#name-input').css('background', '#FFF');
+  }
+  if ($('#email-input').val().length < 1) {
+    errors = true;
+    $('#email-input').css('background', 'pink');
+  } else {
+    $('#email-input').css('background', '#FFF');
+  }
+  if ($('#message-input').val().length < 1) {
+    errors = true;
+    $('#message-input').css('background', 'pink');
+  } else {
+    $('#message-input').css('background', '#FFF');
+  }
+
+  if(errors) {
+    return;
+  }
+
+  $('.form-wrapper .static-content.in').removeClass('in');
+  $('.loader').addClass('in');
+
+  var data = { 
+              name: $('#name-input').val(), 
+              email: $('#email-input').val(),
+              message: $('#message-input').val()
+            };
+  var $form = $( this )
+  var url = $form.attr( 'action' );
+  
+  setTimeout(function(){
+    $.post( url, data, function( response ) {
+      console.log(response);
+      $('.form-wrapper span').text('THANK YOU FOR SIGNING UP.');
+      $('.form-wrapper form .input-wrapper').hide();
+      $('.form-wrapper .static-content').addClass('in');
+      $('.loader').removeClass('in');
+    });
+  }, 1500);
+});
 
 })(window.Zepto || window.jQuery, window, document);

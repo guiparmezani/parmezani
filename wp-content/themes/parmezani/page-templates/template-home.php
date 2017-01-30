@@ -56,11 +56,15 @@ get_header();
 							<div class="col-sm-4" style="background-image: url(<?php the_field('huge_nav_image_1'); ?>);">
 								<a href="<?php the_field('huge_nav_url_1') ?>" class="anchor-link">
 									<div class="huge-nav-content">
-										<div class="huge-nav-mask">
-										</div>
+										<div class="huge-nav-mask"></div>
 										<h2 class="huge-nav-text"><?php the_field('huge_nav_text_1') ?>
 											<hr>
 										</h2>
+										<div class="hover-show">
+											<p><?php the_field('huge_nav_content_1') ?></p>
+											<i class="fa fa-angle-down" aria-hidden="true"></i>
+										</div>
+										<div class="block-content-wrapper"></div>
 									</div>
 								</a>
 							</div>
@@ -68,11 +72,15 @@ get_header();
 							<div class="col-sm-4" style="background-image: url(<?php the_field('huge_nav_image_2'); ?>);">
 								<a href="<?php the_field('huge_nav_url_2') ?>" class="anchor-link">
 									<div class="huge-nav-content">
-										<div class="huge-nav-mask">
-										</div>
+										<div class="huge-nav-mask"></div>
 										<h2 class="huge-nav-text"><?php the_field('huge_nav_text_2') ?>
 											<hr>
 										</h2>
+										<div class="hover-show">
+											<p><?php the_field('huge_nav_content_2') ?></p>
+											<i class="fa fa-angle-down" aria-hidden="true"></i>
+										</div>
+										<div class="block-content-wrapper"></div>
 									</div>
 								</a>
 							</div>
@@ -80,11 +88,15 @@ get_header();
 							<div class="col-sm-4" style="background-image: url(<?php the_field('huge_nav_image_3'); ?>);">
 								<a href="<?php the_field('huge_nav_url_3') ?>" class="anchor-link">
 									<div class="huge-nav-content">
-										<div class="huge-nav-mask">
-										</div>
+										<div class="huge-nav-mask"></div>
 										<h2 class="huge-nav-text"><?php the_field('huge_nav_text_3') ?>
 											<hr>
 										</h2>
+										<div class="hover-show">
+											<p><?php the_field('huge_nav_content_3') ?></p>
+											<i class="fa fa-angle-down" aria-hidden="true"></i>
+										</div>
+										<div class="block-content-wrapper"></div>
 									</div>
 								</a>
 							</div>
@@ -126,6 +138,7 @@ get_header();
 											<h2><?php the_title(); ?><hr></h2>
 											<div class="hover-show">
 												<p><?php the_content(); ?></p>
+												<p class="note">LAUNCH SITE <i class="fa fa-angle-right" aria-hidden="true"></i></p>
 											</div>
 											<div class="block-content-wrapper">
 											</div>
@@ -149,19 +162,24 @@ get_header();
 					<hr>
 				</div>
 				<div class="form-wrapper">
-					<form method="post" class="contact-form" id="contact-form">
-						<div class="col-sm-6">
-							<input name="name" type="text" placeholder="Name">
-						</div>
-						<div class="col-sm-6">
-							<input name="email" type="email" placeholder="Email">
-						</div>
-						<div class="col-sm-12">
-							<textarea name="message" placeholder="Message"></textarea>
-						</div>
+					<div class="loader">
+						Sending...
+					</div>
+					<div class="static-content in">
+						<form method="post" class="contact-form" id="contact-form" action="<?php echo bloginfo('template_url'); ?>/page-templates/email-sign-up.php">
+							<div class="col-sm-6">
+								<input name="name" type="text" placeholder="Name" id="name-input">
+							</div>
+							<div class="col-sm-6">
+								<input name="email" type="email" placeholder="Email" id="email-input">
+							</div>
+							<div class="col-sm-12">
+								<textarea name="message" placeholder="A bit about your project" id="message-input"></textarea>
+							</div>
 
-						<input type="submit" class="btn-brand" value="SUBMIT"></input>
-					</form>
+							<input type="submit" class="btn-brand" value="GET REAL"></input>
+						</form>
+					</div>
 				</div>
 			</section>
 		</main><!-- #main -->

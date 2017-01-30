@@ -25,7 +25,30 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="site-info">
 						<!-- content goes here -->
-						<p>macaco</p>
+						<div class="page-heading">
+							<div class="avatar">
+								<img src="<?php echo bloginfo('template_url') . '/img/avatar.jpg'; ?>">
+							</div>
+							<h2>
+								<span class="main">G</span><span class="secondary">UILHERME </span><span class="main">P</span><span class="secondary">ARME</span><span class="main">Z</span><span class="secondary">A</span><span class="main">N</span><span class="secondary">I</span>
+							</h2>
+						</div>
+						<div class="contact-methods-wrapper">
+							<div class="row">
+								<div class="col-sm-6">
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+									<p>
+										<a href="mailto:contact@parmezani.com">contact@parmezani.com</a>
+									</p>
+								</div>
+								<div class="col-sm-6">
+									<i class="fa fa-skype" aria-hidden="true"></i>
+									<p>
+										<a href="skype:parmabr?call">parmabr</a>
+									</p>
+								</div>
+							</div>
+						</div>
 					</div><!-- .site-info -->
 
 				</footer><!-- #colophon -->

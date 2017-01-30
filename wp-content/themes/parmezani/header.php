@@ -22,6 +22,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans|Roboto|Roboto+Condensed" rel="stylesheet">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<?php wp_head(); ?>
 </head>
 
