@@ -5656,6 +5656,14 @@ $('a.anchor-link').click(function(e){
 	$(window).scrollTo($(this).attr('href'), 600);
 });
 
+$(window).scroll(function(){
+  if ($(window).scrollTop() > 400) {
+    $('.back-to-top').addClass('in');
+  } else {
+    $('.back-to-top').removeClass('in');
+  }
+});
+
 // background movement animation
 var mX, mY, distance, bgBenderX, bgBenderX,
 $element  = $('.screen-center');

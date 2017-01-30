@@ -23,7 +23,7 @@ get_header();
 
 			<div class="screen-center hidden"></div>
 			
-			<div class="hero-area" style="background-image: linear-gradient(rgba(250,250,241,0.95), rgba(250,250,241,0.95)), url(<?php echo $home_background; ?>);">
+			<div class="hero-area" style="background-image: linear-gradient(rgba(250,250,241,0.95), rgba(250,250,241,0.95)), url(<?php echo $home_background; ?>);" id="top">
 				<div class="container">
 					<div class="hero-content-wrapper">
 						<div class="hero-text-wrapper">
@@ -58,7 +58,7 @@ get_header();
 									<div class="huge-nav-content">
 										<div class="huge-nav-mask"></div>
 										<h2 class="huge-nav-text"><?php the_field('huge_nav_text_1') ?>
-											<hr>
+											<hr class="desktop">
 										</h2>
 										<div class="hover-show">
 											<p><?php the_field('huge_nav_content_1') ?></p>
@@ -74,7 +74,7 @@ get_header();
 									<div class="huge-nav-content">
 										<div class="huge-nav-mask"></div>
 										<h2 class="huge-nav-text"><?php the_field('huge_nav_text_2') ?>
-											<hr>
+											<hr class="desktop">
 										</h2>
 										<div class="hover-show">
 											<p><?php the_field('huge_nav_content_2') ?></p>
@@ -90,7 +90,7 @@ get_header();
 									<div class="huge-nav-content">
 										<div class="huge-nav-mask"></div>
 										<h2 class="huge-nav-text"><?php the_field('huge_nav_text_3') ?>
-											<hr>
+											<hr class="desktop">
 										</h2>
 										<div class="hover-show">
 											<p><?php the_field('huge_nav_content_3') ?></p>
@@ -135,7 +135,7 @@ get_header();
 									<a href="<?php the_field('project_url'); ?>" target="_blank">
 										<div class="portfolio-item-wrapper" style="background-image: url('<?php echo $background_image; ?>');">
 											<div class="portfolio-item-mask"></div>
-											<h2><?php the_title(); ?><hr></h2>
+											<h2><?php the_title(); ?><hr class="desktop"></h2>
 											<div class="hover-show">
 												<p><?php the_content(); ?></p>
 												<p class="note">LAUNCH SITE <i class="fa fa-angle-right" aria-hidden="true"></i></p>
@@ -182,6 +182,8 @@ get_header();
 					</div>
 				</div>
 			</section>
+
+			<a href="#top" class="back-to-top anchor-link"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 		</main><!-- #main -->
 	</div><!-- Wrapper end -->
 <?php endwhile; ?>
