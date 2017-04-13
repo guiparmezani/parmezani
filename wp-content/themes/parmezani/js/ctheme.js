@@ -5650,17 +5650,24 @@ setTimeout(function(){
 	$('.scroll-btn').addClass('animated');
 }, 3100);
 
-$('a.anchor-link').click(function(e){
+$('a.anchor-link, .anchor-link a').click(function(e){
 	e.preventDefault();
-
-	$(window).scrollTo($(this).attr('href'), 600);
+  $('.anchor-link, .anchor-link a').removeClass('active');
+  $(this).addClass('active');
+  if ($(window).width() > 991) {
+   $(window).scrollTo($(this).attr('href'), 600, {offset: -106});
+  } else {
+	 $(window).scrollTo($(this).attr('href'), 600);
+  }
 });
 
 $(window).scroll(function(){
   if ($(window).scrollTop() > 400) {
     $('.back-to-top').addClass('in');
+    $('.sticky-header').addClass('in');
   } else {
     $('.back-to-top').removeClass('in');
+    $('.sticky-header').removeClass('in');
   }
 });
 
@@ -5686,6 +5693,15 @@ if ($(window).width() > 787) {
 
   });
 }
+
+$('.navbar-toggler').click(function(){
+  $(this).toggleClass('pressed');
+  if(!$(this).hasClass('pressed')) {
+    $('.search-area').removeClass('in');
+  }
+});
+
+$('body').scrollspy({ target: 'nav.navbar', offset: 107 });
 
 $('.huge-hire-btn-wrapper').animate3d({rotation: 0.075});
 
@@ -5728,15 +5744,14 @@ $("#contact-form").submit(function(event) {
   var $form = $( this )
   var url = $form.attr( 'action' );
   
-  setTimeout(function(){
-    $.post( url, data, function( response ) {
-      console.log(response);
-      $('.form-wrapper span').text('THANK YOU FOR SIGNING UP.');
+  $.post( url, data, function( response ) {
+    setTimeout(function(){
+      $('.form-wrapper').addClass('text-align');
+      $('.form-wrapper span').text('Thank you for your message. You should hear back from me soon.');
       $('.form-wrapper form .input-wrapper').hide();
-      $('.form-wrapper .static-content').addClass('in');
       $('.loader').removeClass('in');
-    });
-  }, 1500);
+    }, 1000);
+  });
 });
 
 })(window.Zepto || window.jQuery, window, document);

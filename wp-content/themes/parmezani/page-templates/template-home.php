@@ -118,7 +118,7 @@ get_header();
 				</div>
 			</section>
 			
-			<section class="page-section recent-work-section" id="recent-work">
+			<section class="page-section recent-work-section" id="work">
 				<div class="container">
 					<div class="page-heading">
 						<h2>RECENT WORK</h2>
@@ -131,7 +131,7 @@ get_header();
 							<?php if (has_post_thumbnail()) {
 								$background_image = get_the_post_thumbnail_url();
 							} ?>
-								<div class="col-sm-4">
+								<div class="col-lg-4">
 									<a href="<?php the_field('project_url'); ?>" target="_blank">
 										<div class="portfolio-item-wrapper" style="background-image: url('<?php echo $background_image; ?>');">
 											<div class="portfolio-item-mask"></div>
@@ -152,7 +152,7 @@ get_header();
 				</div>
 			</section>
 
-			<div class="huge-hire-btn-wrapper">
+			<div class="huge-hire-btn-wrapper desktop">
 				<a href="#contact" class="huge-hire-btn anchor-link">Take the first step.<br><br><br><span>HIRE ME</span></a>
 			</div>
 
@@ -165,6 +165,7 @@ get_header();
 					<div class="loader">
 						Sending...
 					</div>
+					<span></span>
 					<div class="static-content in">
 						<form method="post" class="contact-form" id="contact-form" action="<?php echo bloginfo('template_url'); ?>/page-templates/email-sign-up.php">
 							<div class="col-sm-6">
