@@ -44,7 +44,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								<div class="col-sm-6">
 									<i class="fa fa-skype" aria-hidden="true"></i>
 									<p>
-										<a href="skype:parmabr?call">parmabr</a>
+										<a href="skype:g.parmezani@gmail.com?call">g.parmezani@gmail.com</a>
 									</p>
 								</div>
 							</div>

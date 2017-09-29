@@ -129,7 +129,7 @@ get_header();
 						<div class="row">
 							<?php while($projects->have_posts()): $projects->the_post(); ?>
 							<?php if (has_post_thumbnail()) {
-								$background_image = get_the_post_thumbnail_url();
+								$background_image = get_the_post_thumbnail_url($post, 'large');
 							} ?>
 								<div class="col-lg-4">
 									<a href="<?php the_field('project_url'); ?>" target="_blank">

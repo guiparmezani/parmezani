@@ -17,8 +17,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-title"
-	      content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
+	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
+	<meta name="google-site-verification" content="a_h5cdtwkg_MbW3uarkoZxQ7qRa47kgtxwmCWEBg0GU" />
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans|PT+Sans+Narrow|Roboto|Roboto+Condensed" rel="stylesheet">

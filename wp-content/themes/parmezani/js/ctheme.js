@@ -5655,7 +5655,7 @@ $('a.anchor-link, .anchor-link a').click(function(e){
   $('.anchor-link, .anchor-link a').removeClass('active');
   $(this).addClass('active');
   if ($(window).width() > 991) {
-   $(window).scrollTo($(this).attr('href'), 600, {offset: -106});
+   $(window).scrollTo($(this).attr('href'), 600, {offset: -65});
   } else {
 	 $(window).scrollTo($(this).attr('href'), 600);
   }
@@ -5701,7 +5701,7 @@ $('.navbar-toggler').click(function(){
   }
 });
 
-$('body').scrollspy({ target: 'nav.navbar', offset: 107 });
+$('body').scrollspy({ target: 'nav.navbar', offset: 66 });
 
 $('.huge-hire-btn-wrapper').animate3d({rotation: 0.075});
 
