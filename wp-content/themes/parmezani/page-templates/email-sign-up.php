@@ -20,7 +20,7 @@ $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, 
 $mail->Port = 25;                                    // TCP port to connect to
 
 $mail->setFrom('webserver@parmezani.com', 'Parmezani');
-$mail->addAddress('g.parmezani@gmail.com', 'G');     // Add a recipient
+$mail->addAddress('contact@parmezani.com', 'Contact');     // Add a recipient
 
 $mail->isHTML(true);                                  // Set email format to HTML
 
