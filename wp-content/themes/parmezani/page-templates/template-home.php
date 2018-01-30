@@ -131,7 +131,7 @@ get_header();
 							<?php if (has_post_thumbnail()) {
 								$background_image = get_the_post_thumbnail_url($post, 'large');
 							} ?>
-								<div class="col-lg-4">
+								<div class="col-xl-4">
 									<a href="<?php the_field('project_url'); ?>" target="_blank">
 										<div class="portfolio-item-wrapper" style="background-image: url('<?php echo $background_image; ?>');">
 											<div class="portfolio-item-mask"></div>
