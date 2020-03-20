@@ -6,7 +6,6 @@
   "scripts": {
     "postinstall": "gulp copy-assets"
   },
-
   "repository": {
     "type": "git",
     "url": "https://github.com/holger1411/understrap.git"

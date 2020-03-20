@@ -1,5 +1,5 @@
 // Some basic padding for all wrappers
-.wrapper { padding: $grid-gutter-width-base 0; }
+.wrapper { padding: 0 0; }
 
 // Reset hero wrapper padding to 0
 #wrapper-hero { padding: 0px !important; }
@@ -10,11 +10,11 @@
 .bypostauthor { font-size: inherit; }
 
 // Separate sticky wrapper from main content
-.wrapper#wrapper-sticky { border-bottom: 1px solid $gray-light; }
+.wrapper#wrapper-sticky { border-bottom: 1px solid #ccc; }
 
 // Adding some contrast background color to footer full widget
 #wrapper-footer-full,
-#wrapper-static-hero { background-color: $gray-lighter; }
+#wrapper-static-hero { background-color: #ccc; }
 
 // Necessary WP classes
 .wp-caption { font-size: inherit; }
@@ -106,7 +106,7 @@ a.skip-link {
 .navbar-dark {
   .navbar-toggle { border: 1px solid #fff; }
   .icon-bar { border-bottom: 1px solid #fff; }
-  .dropdown-menu { background-color: $gray-dark; }
+  .dropdown-menu { background-color: #ccc; }
 }
 
 .navbar #main-menu { float:left; }
@@ -132,9 +132,9 @@ a.skip-link {
 
 .post-navigation,
 .paged-navigation {
-  padding: ($grid-gutter-width-base/2) 0;
-  margin: $grid-gutter-width-base 0;
-  border-top: 1px solid $gray-lighter;
+  padding: (0/2) 0;
+  margin: 0 0;
+  border-top: 1px solid #ccc;
 }
 
 // Fixing BS dropdown in a dropdown
