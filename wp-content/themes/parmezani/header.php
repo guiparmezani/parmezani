@@ -21,7 +21,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta name="google-site-verification" content="a_h5cdtwkg_MbW3uarkoZxQ7qRa47kgtxwmCWEBg0GU" />
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans|PT+Sans+Narrow|Roboto|Roboto+Condensed" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans:400,700|PT+Sans+Narrow:400,700|Roboto|Roboto+Condensed" rel="stylesheet">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120792589-1"></script>
