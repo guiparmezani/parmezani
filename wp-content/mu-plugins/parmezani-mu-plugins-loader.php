@@ -1,9 +1,9 @@
 <?php 
 
 /**
- * Plugin Name: TMA iMIS data integration plugin
- * Description: Reads data from excel sheets and creates/updates TMA profiles within Wordress.
- * Author: Bode Digital
+ * Plugin Name: Parmezani Mailer
+ * Description: Receives form submission data from front-end and sends it via email.
+ * Author: GPZN
  */
 require WPMU_PLUGIN_DIR . '/parmezani-mailer/parmezani-mailer.php';
 

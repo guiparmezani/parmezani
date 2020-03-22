@@ -96,6 +96,8 @@ $('.huge-hire-btn-wrapper').animate3d({rotation: 0.075});
 $("#contact-form").submit(function(event) {
   event.preventDefault();
 
+  console.log(ajax_object.ajax_url);
+
   var errors = false;
 
   if ($('#name-input').val().length < 1) {
@@ -125,14 +127,13 @@ $("#contact-form").submit(function(event) {
   $('.loader').addClass('in');
 
   var data = { 
-              name: $('#name-input').val(), 
-              email: $('#email-input').val(),
-              message: $('#message-input').val()
-            };
-  var $form = $( this )
-  var url = $form.attr( 'action' );
+        name: $('#name-input').val(), 
+        email: $('#email-input').val(),
+        message: $('#message-input').val(),
+        action: 'send_notification_mail'
+      };
   
-  $.post( url, data, function( response ) {
+  $.post( ajax_object.ajax_url, data, function( response ) {
     setTimeout(function(){
       $('.form-wrapper').addClass('text-align');
       $('.form-wrapper span').text('Thank you for your message. You should hear back from me soon.');
