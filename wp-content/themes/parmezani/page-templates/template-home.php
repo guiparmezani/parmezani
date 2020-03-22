@@ -168,8 +168,7 @@ get_header();
 						</div>
 						<span></span>
 						<div class="static-content in">
-							<!-- <form method="post" class="contact-form" id="contact-form" action="<?php echo bloginfo('template_url'); ?>/page-templates/email-sign-up.php"> -->
-							<form method="post" class="contact-form" id="contact-form" action="<?php echo WPMU_PLUGIN_DIR . '/parmezani-mailer/parmezani-mailer.php'; ?>">
+							<form method="post" class="contact-form" id="contact-form" action="<?php echo plugins_url('includes/parmezani-mailer-source.php', WPMU_PLUGIN_DIR . '/parmezani-mailer/includes/'); ?>">
 								<div class="row">
 									<div class="col-sm-6">
 										<input name="name" type="text" placeholder="Name" id="name-input">
