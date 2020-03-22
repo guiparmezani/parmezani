@@ -12,15 +12,18 @@ $mail = new PHPMailer;
 $txt = "Email: " . $entry_email . '<br>Name: ' . $entry_name . '<br> Message: ' . $entry_message;
 
 $mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'mail.parmezani.com';  // Specify main and backup SMTP servers
+
+$mail->Host = 'box1143.bluehost.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
 $mail->Username = 'webserver@parmezani.com';                 // SMTP username
 $mail->Password = 'SlandayRecound@321';                           // SMTP password
-$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 25;                                    // TCP port to connect to
+$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+$mail->Port = 465;                                    // TCP port to connect to
 
 $mail->setFrom('webserver@parmezani.com', 'Parmezani');
 $mail->addAddress('contact@parmezani.com', 'Contact');     // Add a recipient
+$mail->addAddress('g.parmezani@gmail.com', 'Parma');     // Add a recipient
+$mail->addAddress('g@parmezani.com', 'G');     // Add a recipient
 
 $mail->isHTML(true);                                  // Set email format to HTML
 

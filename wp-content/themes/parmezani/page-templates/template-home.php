@@ -157,29 +157,34 @@ get_header();
 			</div>
 
 			<section class="page-section contact-section" id="contact">
-				<div class="page-heading">
-					<h2>CONTACT</h2>
-					<hr>
-				</div>
-				<div class="form-wrapper">
-					<div class="loader">
-						Sending...
+				<div class="container">
+					<div class="page-heading">
+						<h2>CONTACT</h2>
+						<hr>
 					</div>
-					<span></span>
-					<div class="static-content in">
-						<form method="post" class="contact-form" id="contact-form" action="<?php echo bloginfo('template_url'); ?>/page-templates/email-sign-up.php">
-							<div class="col-sm-6">
-								<input name="name" type="text" placeholder="Name" id="name-input">
-							</div>
-							<div class="col-sm-6">
-								<input name="email" type="email" placeholder="Email" id="email-input">
-							</div>
-							<div class="col-sm-12">
-								<textarea name="message" placeholder="A bit about your project" id="message-input"></textarea>
-							</div>
+					<div class="form-wrapper">
+						<div class="loader">
+							Sending...
+						</div>
+						<span></span>
+						<div class="static-content in">
+							<!-- <form method="post" class="contact-form" id="contact-form" action="<?php echo bloginfo('template_url'); ?>/page-templates/email-sign-up.php"> -->
+							<form method="post" class="contact-form" id="contact-form" action="<?php echo WPMU_PLUGIN_DIR . '/parmezani-mailer/parmezani-mailer.php'; ?>">
+								<div class="row">
+									<div class="col-sm-6">
+										<input name="name" type="text" placeholder="Name" id="name-input">
+									</div>
+									<div class="col-sm-6">
+										<input name="email" type="email" placeholder="Email" id="email-input">
+									</div>
+									<div class="col-sm-12">
+										<textarea name="message" placeholder="A bit about your project" id="message-input"></textarea>
+									</div>
+								</div>
 
-							<input type="submit" class="btn-brand" value="GET REAL"></input>
-						</form>
+								<input type="submit" class="btn-brand" value="GET REAL"></input>
+							</form>
+						</div>
 					</div>
 				</div>
 			</section>

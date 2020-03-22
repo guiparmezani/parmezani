@@ -87,7 +87,7 @@ p.small {
 p.note {
 	font-size: 14px;
 	font-family: $font-roboto-condensed;
-	font-weight: light;
+	font-weight: 300;
 }
 
 .btn-brand {
@@ -99,11 +99,11 @@ p.note {
 	border: none;
 	border-radius: 0;
 	color: $brand-white;
-	background-color: $brand-purple;
+	background-color: $brand-red;
 	font-weight: bold;
 	&:hover {
 		color: $brand-white;
-		background-color: darken($brand-purple, 10%);
+		background-color: darken($brand-red, 10%);
 	}
 	&:focus, &:active, &:hover {
 		color: $brand-white;
@@ -118,7 +118,7 @@ p.note {
   width: 100vw;
   text-align: center;
   padding: 25vh 0;
-  background-color: $brand-purple;
+  background-color: $brand-red;
   color: #fff;
   font-family: $font-roboto-condensed;
   font-size: 38px;
@@ -273,7 +273,7 @@ header {
 	top: 0;
 	width: 100%;
 	left: 0;
-	background-color: $brand-purple;
+	background-color: $brand-black;
 	nav.navbar {
 		background: transparent;
 		padding: 0;
@@ -290,18 +290,24 @@ header {
 					text-align: center;
 					color: $brand-white;
 					font-family: $font-roboto-condensed;
-					font-weight: light;
+					font-weight: 300;
+					padding: 0;
+					padding-bottom: 5px
 				}
 			}
 		}
 		#exCollapsingNavbar {
-			margin-top: 7px;
+			justify-content: flex-end;
+
+			&.in {
+				display: block !important;
+			}
 		}
 	}
 	.navbar-toggler {
 		float: right;
 		padding: 0;
-		margin-top: 5px;
+		margin-top: 16px;
 		border-radius: 0;
 		outline: none !important;
 		width: 35px;
@@ -383,6 +389,13 @@ header {
 			}
 		}
 	}
+
+	@include media-breakpoint-down(sm) {
+		.navbar-header {
+			width: 100%;
+			padding: 0 15px;
+		}
+	}
 }
 // --- Header
 
@@ -397,7 +410,7 @@ header {
 			background-position: 50% 50%;
 			// background-size: 110%;
 			background-repeat: repeat;
-			height: 560px;
+			height: 490px;
 			position: relative;
 			.container {
 				height: 100%;
@@ -659,10 +672,10 @@ header {
 			background-size: cover;
 			.hero-area {
 				.hero-content-wrapper {
-					top: 30%;
+					top: 35%;
 					.hero-text-wrapper {
 						top: 55%;
-						width: 70%;
+						width: 85%;
 						.hero-title h1 {
 							font-size: 78px;
 						}
@@ -672,12 +685,19 @@ header {
 					bottom: 70px;
 				}
 			}
-			.huge-navs-wrapper .col-sm-4 .huge-nav-content {
-				height: 242px;
+			.huge-navs-wrapper .col-sm-4 {
+				.huge-nav-content {
+					height: 242px;
+				}
 			}
 			.portfolio-item-wrapper {
 				min-height: 300px;
+				position: relative;
 				margin-bottom: 15px;
+
+				.portfolio-item-mask {
+					margin: 0;
+				}
 			}
 		}
 	}

@@ -45,7 +45,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<a class="skip-link screen-reader-text sr-only" href="#content"><?php _e( 'Skip to content',
 		'understrap' ); ?></a>
 
-		<nav class="navbar site-navigation" itemscope="itemscope"
+		<nav class="navbar navbar-expand-lg site-navigation" itemscope="itemscope"
 		     itemtype="http://schema.org/SiteNavigationElement">
 
 			<div class="<?php echo esc_html( $container ); ?>" >
@@ -78,7 +78,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<?php wp_nav_menu(
 					array(
 						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-toggleable-xs exCollapsingNavbar menu-container',
+						'container_class' => 'collapse navbar-collapse exCollapsingNavbar menu-container',
 						'container_id'    => 'exCollapsingNavbar',
 						'menu_class'      => 'nav navbar-nav',
 						'fallback_cb'     => '',

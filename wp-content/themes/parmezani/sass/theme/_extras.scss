@@ -22,10 +22,10 @@
   margin: 10px auto;
   font-size: 2px;
   text-indent: -9999em;
-  border-top: 1.1em solid $brand-purple;
-  border-right: 1.1em solid #fff;
-  border-bottom: 1.1em solid #fff;
-  border-left: 1.1em solid #fff;
+  border-top: 1.1em solid $brand-red;
+  border-right: 1.1em solid $brand-white;
+  border-bottom: 1.1em solid $brand-white;
+  border-left: 1.1em solid $brand-white;
 }
 .loader.in {
   -webkit-transform: translateZ(0);
