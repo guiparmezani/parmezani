@@ -121,7 +121,7 @@ get_header();
 			<section class="page-section recent-work-section" id="work">
 				<div class="container">
 					<div class="page-heading">
-						<h2>RECENT WORK</h2>
+						<h2>PORTFOLIO</h2>
 						<hr>
 					</div>
 					<div class="portfolio-nav">
@@ -168,7 +168,7 @@ get_header();
 						</div>
 						<span></span>
 						<div class="static-content in">
-							<form method="post" class="contact-form" id="contact-form" action="<?php echo plugins_url('includes/parmezani-mailer-source.php', WPMU_PLUGIN_DIR . '/parmezani-mailer/includes/'); ?>">
+							<form method="post" class="contact-form" id="contact-form" action="">
 								<div class="row">
 									<div class="col-sm-6">
 										<input name="name" type="text" placeholder="Name" id="name-input">
