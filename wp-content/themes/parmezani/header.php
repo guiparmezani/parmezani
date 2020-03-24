@@ -23,6 +23,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link href="https://fonts.googleapis.com/css?family=Oswald|PT+Sans:400,700|PT+Sans+Narrow:400,700|Roboto|Roboto+Condensed" rel="stylesheet">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120792589-1"></script>
 	<script>

@@ -25,6 +25,11 @@ function initTypingEffect() {
   type();
 }
 
+function recaptchaCallback() {
+  $('#contact-form input[type="submit"]').removeAttr('disabled');
+  console.log('submit enabled')
+}
+
 //intro functions
 setTimeout(function(){
   initTypingEffect();
@@ -142,5 +147,15 @@ $("#contact-form").submit(function(event) {
     }, 1000);
   });
 });
+
+$('#contact-form').on('submit', function(e){
+  e.preventDefault();
+
+  if (grecaptcha.getResponse().length == 0) {
+    console.log('reCAPTCHA not solved');
+    return false;
+  }
+});
+
 
 })(window.Zepto || window.jQuery, window, document);

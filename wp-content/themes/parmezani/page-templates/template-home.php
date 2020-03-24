@@ -186,10 +186,15 @@ get_header();
 									</div>
 									<div class="col-sm-12">
 										<textarea name="message" placeholder="A bit about your project" id="message-input"></textarea>
+
+										<div class="submit-area">
+											<div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="6Ld3w-MUAAAAAOb0i5mzxpXbb_5sqPujGWyy0QcG"></div>
+											<input type="submit" id="submitButton" class="btn-brand" value="GET REAL" disabled></input>
+										</div>
+
 									</div>
 								</div>
 
-								<input type="submit" class="btn-brand" value="GET REAL"></input>
 							</form>
 						</div>
 					</div>

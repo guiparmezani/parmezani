@@ -63,6 +63,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 </div><!-- #page -->
 
+<script type="text/javascript">
+	function recaptchaCallback() {
+	  document.getElementById('submitButton').removeAttribute('disabled');
+	  console.log('submit enabled')
+	}
+</script>
+
 <?php wp_footer(); ?>
 
 </body>
