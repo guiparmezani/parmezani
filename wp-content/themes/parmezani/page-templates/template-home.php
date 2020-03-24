@@ -127,10 +127,14 @@ get_header();
 					<div class="portfolio-nav">
 						<?php if($projects->have_posts()): ?>
 						<div class="row">
-							<?php while($projects->have_posts()): $projects->the_post(); ?>
-							<?php if (has_post_thumbnail()) {
-								$background_image = get_the_post_thumbnail_url($post, 'large');
-							} ?>
+							<?php $i=0; while($projects->have_posts()): $projects->the_post(); ?>
+							<?php if ($i==3): $i=0; ?>
+								</div>
+								<div class="row">
+							<?php endif ?>
+							<?php if (has_post_thumbnail()): ?>
+								<?php $background_image = get_the_post_thumbnail_url($post, 'large'); ?>
+							<?php endif ?>
 								<div class="col-xl-4">
 									<a href="<?php the_field('project_url'); ?>" target="_blank">
 										<div class="portfolio-item-wrapper" style="background-image: url('<?php echo $background_image; ?>');">
@@ -144,8 +148,12 @@ get_header();
 											</div>
 										</div>
 									</a>
+									<div class="mobile mobile-info">
+										<p><?php the_content(); ?></p>
+										<p class="note">LAUNCH SITE <i class="fa fa-angle-right" aria-hidden="true"></i></p>
+									</div>
 								</div>
-							<?php endwhile; ?>
+							<?php $i++; endwhile; ?>
 						</div>
 						<?php endif; ?>
 					</div>
@@ -188,7 +196,7 @@ get_header();
 				</div>
 			</section>
 
-			<a href="#top" class="back-to-top anchor-link"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+			<a href="#wrapper-navbar" class="back-to-top anchor-link"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 		</main><!-- #main -->
 	</div><!-- Wrapper end -->
 <?php endwhile; ?>

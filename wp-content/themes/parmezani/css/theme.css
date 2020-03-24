@@ -10834,12 +10834,12 @@ aside.widget {
     margin-top: 0; } }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "PT Sans", sans-serif;
   color: #333;
   position: relative; }
 
 p, span, a, input, textarea {
-  font-family: "Roboto", sans-serif;
+  font-family: "PT Sans", sans-serif;
   font-weight: normal;
   font-size: 20px;
   line-height: 30px; }
@@ -10866,7 +10866,7 @@ p.small {
 
 p.note {
   font-size: 14px;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   font-weight: 300; }
 
 .btn-brand {
@@ -10896,11 +10896,12 @@ p.note {
   padding: 25vh 0;
   background-color: #ed4152;
   color: #fff;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "PT Sans Narrow", sans-serif;
   font-size: 38px; }
   .huge-hire-btn span {
     font-size: 100px;
-    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
+    font-family: "PT Sans Narrow", sans-serif;
     color: #FFF; }
   .huge-hire-btn:hover {
     color: #fafaf1; }
@@ -10970,9 +10971,6 @@ p.note {
     margin-top: -4.5px;
     margin-left: -10px;
     opacity: 0; }
-  .hover-show p.note:hover i.fa-angle-right {
-    opacity: 1;
-    margin-left: 3px; }
 
 .block-content-wrapper {
   transition: .6s ease;
@@ -11021,7 +11019,7 @@ header {
       header nav.navbar ul.navbar-nav#main-menu .menu-item a {
         text-align: center;
         color: #fafaf1;
-        font-family: "Roboto Condensed", sans-serif;
+        font-family: "PT Sans Narrow", sans-serif;
         font-weight: 300;
         padding: 0;
         padding-bottom: 5px; }
@@ -11192,14 +11190,29 @@ header {
           .page-template-template-home .page-wrapper .huge-navs-wrapper .col-sm-4 .huge-nav-content:hover h2 hr {
             opacity: 1; } }
 
+.page-template-template-home .page-wrapper .recent-work-section span {
+  font-size: 16px;
+  font-weight: bold; }
+
+.page-template-template-home .page-wrapper .recent-work-section p {
+  font-size: 16px; }
+
+.page-template-template-home .page-wrapper .recent-work-section p.note {
+  color: #ed4152;
+  font-weight: bold; }
+
+.page-template-template-home .page-wrapper .recent-work-section p.note:hover i.fa-angle-right {
+  opacity: 1;
+  margin-left: 3px; }
+
 .page-template-template-home .page-wrapper .portfolio-item-wrapper {
   transition: all .6s ease;
+  position: relative;
+  margin-bottom: 15px;
+  margin-top: 15px;
   min-height: 500px;
   background-size: cover;
   background-position: center; }
-  .page-template-template-home .page-wrapper .portfolio-item-wrapper .block-content-wrapper {
-    left: 45px;
-    right: 45px; }
   .page-template-template-home .page-wrapper .portfolio-item-wrapper .hover-show {
     top: 55%; }
   .page-template-template-home .page-wrapper .portfolio-item-wrapper .portfolio-item-mask {
@@ -11212,13 +11225,14 @@ header {
     position: absolute;
     background-size: cover;
     background-position: center;
-    margin: 0 15px; }
+    margin: 0; }
   .page-template-template-home .page-wrapper .portfolio-item-wrapper h2 {
     transition: .6s ease;
     position: absolute;
     z-index: 5;
     width: 100%;
     text-align: center;
+    max-width: 255px;
     color: #fafaf1; }
     .page-template-template-home .page-wrapper .portfolio-item-wrapper h2 hr {
       transition: .6s ease;
@@ -11294,11 +11308,7 @@ header {
     .page-template-template-home .page-wrapper .huge-navs-wrapper .col-sm-4 .huge-nav-content {
       height: 242px; }
     .page-template-template-home .page-wrapper .portfolio-item-wrapper {
-      min-height: 300px;
-      position: relative;
-      margin-bottom: 15px; }
-      .page-template-template-home .page-wrapper .portfolio-item-wrapper .portfolio-item-mask {
-        margin: 0; } }
+      min-height: 300px; } }
 
 #wrapper-footer {
   background-color: #333;

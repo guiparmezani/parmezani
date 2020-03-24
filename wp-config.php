@@ -17,29 +17,21 @@
  *
  * @package WordPress
  */
-
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'parmezani');
-
 /** MySQL database username */
 define('DB_USER', 'web');
-
 /** MySQL database password */
 define('DB_PASSWORD', 'web');
-
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
-
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
-
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
-
 define('WP_HOME', 'http://parmezani.sites.parmezani.fmaustin.com/');
 define('WP_SITEURL', 'http://parmezani.sites.parmezani.fmaustin.com/');
-
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -57,9 +49,7 @@ define('AUTH_SALT',        '!VfH3kCW0!.Li;w5w{GXcF_T1nKYkS|/`n#C_3?z,cm%wbGsQ7>g
 define('SECURE_AUTH_SALT', 'AJ,EN-SY=d0-;l;aH(mjxH]kf!9zpAf{@ s 07[Dg^z_hZ!0?]3+3r-!|z8!,@B{');
 define('LOGGED_IN_SALT',   '&5y]uJWzieLJO7N0zRLn^K+.&955rR#cNX1K<WdOu$$I}9WRc+WzomtD=x&36{dG');
 define('NONCE_SALT',       'B*z!_NJfrlz=_`I#_nBTGL]rN*hE$kifAtb0JfR0r8eRid]jQ*_q YuAE|R& D]0');
-
 /**#@-*/
-
 /**
  * WordPress Database Table prefix.
  *
@@ -67,7 +57,6 @@ define('NONCE_SALT',       'B*z!_NJfrlz=_`I#_nBTGL]rN*hE$kifAtb0JfR0r8eRid]jQ*_q
  * a unique prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix  = 'wp_';
-
 /**
  * For developers: WordPress debugging mode.
  *
@@ -81,12 +70,9 @@ $table_prefix  = 'wp_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
-
 /* That's all, stop editing! Happy blogging. */
-
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
-
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
