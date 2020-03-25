@@ -101,7 +101,10 @@ $('.huge-hire-btn-wrapper').animate3d({rotation: 0.075});
 $("#contact-form").submit(function(event) {
   event.preventDefault();
 
-  console.log(ajax_object.ajax_url);
+  if (grecaptcha.getResponse().length == 0 || grecaptcha.getResponse() == "") {
+    console.log('reCAPTCHA not solved');
+    return false;
+  }
 
   var errors = false;
 
@@ -148,14 +151,6 @@ $("#contact-form").submit(function(event) {
   });
 });
 
-$('#contact-form').on('submit', function(e){
-  e.preventDefault();
-
-  if (grecaptcha.getResponse().length == 0) {
-    console.log('reCAPTCHA not solved');
-    return false;
-  }
-});
 
 
 })(window.Zepto || window.jQuery, window, document);
