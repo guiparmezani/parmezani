@@ -201,7 +201,7 @@ get_header();
 				</div>
 			</section>
 
-			<a href="#wrapper-navbar" class="back-to-top anchor-link"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+			<a href="#page" class="back-to-top anchor-link"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 		</main><!-- #main -->
 	</div><!-- Wrapper end -->
 <?php endwhile; ?>
