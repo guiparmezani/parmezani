@@ -303,7 +303,7 @@ button {
 
 .hero__stage {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   min-height: 470px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -323,24 +323,24 @@ button {
 }
 
 .hero-card--one {
-  top: 28px;
+  top: -14px;
   left: 22px;
-  width: 74%;
-  height: 210px;
+  width: 78%;
+  height: 238px;
 }
 
 .hero-card--two {
-  right: 18px;
-  bottom: 158px;
-  width: 58%;
-  height: 230px;
+  right: -12px;
+  bottom: 148px;
+  width: 64%;
+  height: 254px;
 }
 
 .hero-card--three {
   left: 20px;
-  bottom: 22px;
-  width: 46%;
-  height: 178px;
+  bottom: -16px;
+  width: 52%;
+  height: 202px;
   background: var(--accent-3);
 }
 
