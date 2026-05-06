@@ -13,8 +13,11 @@
 	<script>
 		(function () {
 			var stored = window.localStorage.getItem('parmezani-theme');
+			var cmsDefault = '<?php echo esc_js( parmezani_default_theme() ); ?>';
 			var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-			document.documentElement.dataset.theme = stored || (prefersDark ? 'dark' : 'light');
+			var systemTheme = prefersDark ? 'dark' : 'light';
+			var defaultTheme = cmsDefault === 'light' || cmsDefault === 'dark' ? cmsDefault : systemTheme;
+			document.documentElement.dataset.theme = stored || defaultTheme;
 		})();
 	</script>
 	<?php wp_head(); ?>

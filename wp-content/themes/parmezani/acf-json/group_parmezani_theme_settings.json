@@ -1,0 +1,57 @@
+{
+    "key": "group_parmezani_theme_settings",
+    "title": "Portfolio Settings",
+    "fields": [
+        {
+            "key": "field_parmezani_default_theme",
+            "label": "Default Theme",
+            "name": "parmezani_default_theme",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Controls the first-load theme for visitors who have not used the theme toggle yet.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "system": "Use visitor system setting",
+                "light": "Light",
+                "dark": "Dark"
+            },
+            "default_value": "system",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "parmezani-theme-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1778080094
+}
