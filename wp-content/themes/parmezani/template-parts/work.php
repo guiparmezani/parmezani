@@ -18,13 +18,25 @@ $projects = parmezani_projects();
 			<article class="project<?php echo esc_attr( $project['modifier'] ); ?>" data-reveal>
 				<a href="<?php echo esc_url( $project['url'] ); ?>" target="_blank" rel="noreferrer">
 					<div class="project__media">
-						<img src="<?php echo esc_url( get_theme_file_uri( $project['image'] ) ); ?>" alt="<?php echo esc_attr( $project['alt'] ); ?>">
+						<div class="project__media-inner">
+							<img src="<?php echo esc_url( get_theme_file_uri( $project['image'] ) ); ?>" alt="<?php echo esc_attr( $project['alt'] ); ?>">
+						</div>
 					</div>
 					<div class="project__body">
 						<p class="project__number"><?php echo esc_html( $project['number'] ); ?></p>
 						<h3><?php echo esc_html( $project['title'] ); ?></h3>
 						<p><?php echo esc_html( $project['summary'] ); ?></p>
-						<span><?php echo esc_html( $project['meta'] ); ?></span>
+						<span class="project__meta"><?php echo esc_html( $project['meta'] ); ?></span>
+						<dl class="project__credits" aria-label="<?php echo esc_attr( sprintf( __( '%s credits', 'parmezani' ), $project['title'] ) ); ?>">
+							<div>
+								<dt><?php esc_html_e( 'Creative Director', 'parmezani' ); ?></dt>
+								<dd><?php echo esc_html( $project['creative_director'] ); ?></dd>
+							</div>
+							<div>
+								<dt><?php esc_html_e( 'Studio', 'parmezani' ); ?></dt>
+								<dd><?php echo esc_html( $project['studio'] ); ?></dd>
+							</div>
+						</dl>
 					</div>
 				</a>
 			</article>

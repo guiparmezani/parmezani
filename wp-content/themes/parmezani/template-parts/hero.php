@@ -7,7 +7,6 @@
 ?>
 <section class="hero section-pad" aria-labelledby="hero-title">
 	<div class="hero__copy" data-reveal>
-		<p class="eyebrow"><span></span><?php esc_html_e( 'Available for selected web builds', 'parmezani' ); ?></p>
 		<h1 id="hero-title">
 			<?php esc_html_e( 'Digital work for places people', 'parmezani' ); ?>
 			<em><?php esc_html_e( 'remember.', 'parmezani' ); ?></em>

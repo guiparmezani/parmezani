@@ -23,8 +23,21 @@
 <?php wp_body_open(); ?>
 <a class="skip-link" href="#work"><?php esc_html_e( 'Skip to work', 'parmezani' ); ?></a>
 <header class="site-header" data-reveal>
-	<a class="brand-mark" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php esc_attr_e( 'Guilherme Parmezani home', 'parmezani' ); ?>">
-		<span><?php esc_html_e( 'GP', 'parmezani' ); ?></span>
+	<a class="brand-mark" href="#top" aria-label="<?php esc_attr_e( 'Scroll to top', 'parmezani' ); ?>">
+		<?php
+		$signature_logo = get_theme_file_path( 'assets/images/brand/signature.svg' );
+
+		if ( file_exists( $signature_logo ) ) :
+			?>
+			<span class="brand-mark__logo">
+				<?php
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Local theme SVG asset controlled by this theme.
+				echo file_get_contents( $signature_logo );
+				?>
+			</span>
+		<?php else : ?>
+			<span><?php esc_html_e( 'GP', 'parmezani' ); ?></span>
+		<?php endif; ?>
 	</a>
 	<nav class="primary-nav" aria-label="<?php esc_attr_e( 'Primary navigation', 'parmezani' ); ?>">
 		<a href="#work"><?php esc_html_e( 'Work', 'parmezani' ); ?></a>

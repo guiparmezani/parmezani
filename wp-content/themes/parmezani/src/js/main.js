@@ -89,12 +89,34 @@ if (!reducedMotion) {
   });
 
   gsap.to(".hero-card--three", {
-    xPercent: 12,
+    yPercent: -12,
     scrollTrigger: {
       trigger: ".hero",
       start: "top top",
       end: "bottom top",
       scrub: true,
     },
+  });
+
+  gsap.utils.toArray(".project").forEach((project) => {
+    const media = project.querySelector(".project__media-inner");
+    const distance = project.classList.contains("project--contain") ? 16 : 44;
+
+    if (!media) return;
+
+    gsap.fromTo(
+      media,
+      { y: -distance },
+      {
+        y: distance,
+        ease: "none",
+        scrollTrigger: {
+          trigger: project,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      },
+    );
   });
 }
