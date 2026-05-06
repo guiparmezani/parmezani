@@ -22,7 +22,14 @@ function parmezani_seo_description(): string {
 }
 
 function parmezani_seo_image_url(): string {
-	return get_theme_file_uri( 'assets/images/social/og-image.png' );
+	$image_path = get_theme_file_path( 'assets/images/social/og-image.jpg' );
+	$image_url  = get_theme_file_uri( 'assets/images/social/og-image.jpg' );
+
+	if ( file_exists( $image_path ) ) {
+		return add_query_arg( 'v', (string) filemtime( $image_path ), $image_url );
+	}
+
+	return $image_url;
 }
 
 function parmezani_seo_url(): string {
@@ -63,10 +70,11 @@ function parmezani_social_meta_tags(): void {
 	<meta property="og:description" content="<?php echo esc_attr( $description ); ?>">
 	<meta property="og:url" content="<?php echo esc_url( $url ); ?>">
 	<meta property="og:image" content="<?php echo esc_url( $image_url ); ?>">
+	<meta property="og:image:url" content="<?php echo esc_url( $image_url ); ?>">
 	<meta property="og:image:secure_url" content="<?php echo esc_url( set_url_scheme( $image_url, 'https' ) ); ?>">
-	<meta property="og:image:type" content="image/png">
-	<meta property="og:image:width" content="1122">
-	<meta property="og:image:height" content="1402">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
 	<meta property="og:image:alt" content="<?php echo esc_attr( $image_alt ); ?>">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="<?php echo esc_attr( $title ); ?>">
