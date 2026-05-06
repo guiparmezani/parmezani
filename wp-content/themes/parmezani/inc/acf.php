@@ -27,24 +27,6 @@ function parmezani_acf_json_load_paths( array $paths ): array {
 }
 add_filter( 'acf/settings/load_json', 'parmezani_acf_json_load_paths' );
 
-function parmezani_register_acf_options_page(): void {
-	if ( ! function_exists( 'acf_add_options_page' ) ) {
-		return;
-	}
-
-	acf_add_options_page(
-		array(
-			'page_title'  => __( 'Portfolio Settings', 'parmezani' ),
-			'menu_title'  => __( 'Portfolio Settings', 'parmezani' ),
-			'menu_slug'   => 'parmezani-theme-settings',
-			'parent_slug' => 'themes.php',
-			'capability'  => 'edit_theme_options',
-			'redirect'    => false,
-		)
-	);
-}
-add_action( 'acf/init', 'parmezani_register_acf_options_page' );
-
 function parmezani_default_theme(): string {
 	$default_theme = 'system';
 

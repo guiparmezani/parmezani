@@ -1,6 +1,6 @@
 {
     "key": "group_parmezani_theme_settings",
-    "title": "Portfolio Settings",
+    "title": "Theme Options",
     "fields": [
         {
             "key": "field_parmezani_default_theme",
@@ -37,7 +37,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "parmezani-theme-settings"
+                "value": "theme-options"
             }
         ]
     ],
@@ -53,5 +53,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1778080094
+    "modified": 1778080836
 }
