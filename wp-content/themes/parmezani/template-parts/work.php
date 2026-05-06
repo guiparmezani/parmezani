@@ -10,7 +10,7 @@ $projects = parmezani_projects();
 <section class="work section-pad" id="work" aria-labelledby="work-title">
 	<div class="section-head" data-reveal>
 		<p class="section-kicker"><?php esc_html_e( 'Selected Work', 'parmezani' ); ?></p>
-		<h2 id="work-title"><?php esc_html_e( 'Seven projects, one portfolio rhythm.', 'parmezani' ); ?></h2>
+		<h2 id="work-title"><?php esc_html_e( 'Selected builds for business, hospitality, lifestyle, entertainment, art, and residential brands.', 'parmezani' ); ?></h2>
 	</div>
 
 	<div class="project-list">

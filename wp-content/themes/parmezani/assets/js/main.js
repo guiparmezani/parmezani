@@ -6710,6 +6710,7 @@
     });
     gsapWithCSS.utils.toArray("[data-reveal]").forEach((element) => {
       if (element.classList.contains("site-header")) return;
+      if (element.classList.contains("capability-list")) return;
       gsapWithCSS.from(element, {
         y: 28,
         opacity: 0,
@@ -6720,6 +6721,18 @@
           start: "top 82%"
         }
       });
+    });
+    gsapWithCSS.from(".capability-card", {
+      y: 34,
+      opacity: 0,
+      rotateZ: -1.2,
+      duration: 0.75,
+      ease: "power3.out",
+      stagger: 0.08,
+      scrollTrigger: {
+        trigger: ".capability-list",
+        start: "top 82%"
+      }
     });
     gsapWithCSS.to(".hero-card--one", {
       yPercent: -8,

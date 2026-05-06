@@ -14,11 +14,11 @@ function parmezani_seo_site_name(): string {
 }
 
 function parmezani_seo_title(): string {
-	return 'Guilherme Parmezani | Digital Presence Portfolio';
+	return 'Guilherme Parmezani | Front-End & WordPress Developer';
 }
 
 function parmezani_seo_description(): string {
-	return 'Portfolio of Guilherme Parmezani, a digital professional building polished/high-level solutions for hospitality, lifestyle, art, business and entertainment brands.';
+	return 'Senior front-end and WordPress developer building polished, maintainable marketing sites with AI-assisted workflows for faster delivery and sharper execution.';
 }
 
 function parmezani_seo_image_url(): string {

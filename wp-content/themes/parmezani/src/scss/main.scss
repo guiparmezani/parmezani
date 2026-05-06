@@ -377,14 +377,22 @@ button {
   background: var(--ink);
   color: var(--bg);
 
-  div {
+  &__track {
     display: flex;
     width: max-content;
     animation: drift 28s linear infinite;
+    will-change: transform;
   }
 
-  span {
-    padding: 15px 20px;
+  &__group {
+    display: flex;
+    flex: 0 0 auto;
+    min-width: 100vw;
+  }
+
+  &__item {
+    flex: 0 0 auto;
+    padding: 15px 30px;
     color: color-mix(in srgb, var(--bg) 85%, var(--accent));
     font-size: 0.82rem;
     font-weight: 850;
@@ -525,10 +533,10 @@ button {
 
   div {
     display: grid;
-    grid-template-columns: 74px 1fr;
+    grid-template-columns: minmax(86px, 0.32fr) minmax(0, 1fr);
     min-height: 88px;
     align-items: center;
-    gap: 14px;
+    gap: 30px;
     padding: 14px;
     border: 1px solid var(--line);
     border-radius: var(--radius);
@@ -536,13 +544,16 @@ button {
   }
 
   span {
+    min-width: 0;
     color: var(--accent);
     font-size: 2rem;
     font-weight: 900;
     line-height: 1;
+    overflow-wrap: break-word;
   }
 
   p {
+    min-width: 0;
     margin: 0;
     color: var(--muted);
   }
@@ -554,25 +565,131 @@ button {
 
 .capability-list {
   display: grid;
-  gap: 8px;
+  gap: 10px;
+}
+
+.capability-card {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: 196px;
+  align-content: space-between;
+  gap: 28px;
+  margin: 0;
+  overflow: hidden;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--cap-accent, var(--accent)) 18%, transparent), transparent 44%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 88%, transparent), color-mix(in srgb, var(--surface) 70%, transparent));
+  box-shadow: 0 12px 34px color-mix(in srgb, var(--ink) 9%, transparent);
+  transform: translateY(0);
+  transition:
+    border-color 240ms ease,
+    box-shadow 240ms ease,
+    transform 240ms ease,
+    background-color 240ms ease;
+
+  &::before {
+    position: absolute;
+    inset: 0 auto 0 0;
+    z-index: -1;
+    width: 5px;
+    background: var(--cap-accent, var(--accent));
+    content: "";
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 68px;
+    height: 68px;
+    border-left: 1px solid color-mix(in srgb, var(--cap-accent, var(--accent)) 46%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--cap-accent, var(--accent)) 46%, transparent);
+    background: repeating-linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--cap-accent, var(--accent)) 38%, transparent) 0 1px,
+      transparent 1px 8px
+    );
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
+    content: "";
+    opacity: 0.55;
+  }
+
+  &:nth-child(1),
+  &:nth-child(5) {
+    --cap-accent: var(--accent);
+  }
+
+  &:nth-child(2),
+  &:nth-child(6) {
+    --cap-accent: var(--accent-2);
+  }
+
+  &:nth-child(3) {
+    --cap-accent: var(--accent-3);
+  }
+
+  &:nth-child(4) {
+    --cap-accent: color-mix(in srgb, var(--accent) 48%, var(--accent-2));
+  }
+
+  &:hover,
+  &:focus-within {
+    border-color: color-mix(in srgb, var(--cap-accent, var(--accent)) 70%, var(--line));
+    box-shadow: 0 20px 46px color-mix(in srgb, var(--ink) 15%, transparent);
+    transform: translateY(-5px);
+  }
+
+  h3 {
+    max-width: 11ch;
+    margin: 0;
+    color: var(--ink);
+    font-size: 1.45rem;
+    font-weight: 900;
+    line-height: 0.98;
+  }
 
   p {
+    max-width: 32ch;
     margin: 0;
-    padding: 16px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    background: color-mix(in srgb, var(--surface) 74%, transparent);
-    font-size: 1.35rem;
-    font-weight: 850;
-
-    &:nth-child(2n) {
-      color: var(--accent-2);
-    }
-
-    &:nth-child(3n) {
-      color: var(--accent);
-    }
+    color: var(--muted);
+    font-size: 0.93rem;
+    line-height: 1.42;
   }
+}
+
+.capability-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.capability-card__index,
+.capability-card__tag {
+  color: color-mix(in srgb, var(--ink) 72%, var(--cap-accent, var(--accent)));
+  font-size: 0.72rem;
+  font-weight: 850;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.capability-card__index {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--cap-accent, var(--accent)) 58%, var(--line));
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--cap-accent, var(--accent)) 18%, transparent);
+  color: var(--ink);
+}
+
+.capability-card__tag {
+  color: var(--muted);
 }
 
 .contact {
@@ -648,12 +765,12 @@ html[data-theme="dark"] {
     color: var(--accent);
   }
 
-  .site-header,
-  .project__media,
-  .proof-stack div,
-  .capability-list p {
-    box-shadow: none;
-  }
+    .site-header,
+    .project__media,
+    .proof-stack div,
+    .capability-card {
+      box-shadow: none;
+    }
 
   .hero__stage {
     background:
@@ -794,11 +911,15 @@ html[data-theme="dark"] {
 
   .capability-list {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 
-    p {
-      min-height: 150px;
-      font-size: 1.75rem;
-    }
+  .capability-card {
+    min-height: 230px;
+    padding: 20px;
+  }
+
+  .capability-card h3 {
+    font-size: 1.65rem;
   }
 
   .contact-link {

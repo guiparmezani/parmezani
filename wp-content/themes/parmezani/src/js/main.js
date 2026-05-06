@@ -55,6 +55,7 @@ if (!reducedMotion) {
 
   gsap.utils.toArray("[data-reveal]").forEach((element) => {
     if (element.classList.contains("site-header")) return;
+    if (element.classList.contains("capability-list")) return;
 
     gsap.from(element, {
       y: 28,
@@ -66,6 +67,19 @@ if (!reducedMotion) {
         start: "top 82%",
       },
     });
+  });
+
+  gsap.from(".capability-card", {
+    y: 34,
+    opacity: 0,
+    rotateZ: -1.2,
+    duration: 0.75,
+    ease: "power3.out",
+    stagger: 0.08,
+    scrollTrigger: {
+      trigger: ".capability-list",
+      start: "top 82%",
+    },
   });
 
   gsap.to(".hero-card--one", {

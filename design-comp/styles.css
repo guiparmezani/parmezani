@@ -527,25 +527,132 @@ button {
 
 .capability-list {
   display: grid;
-  gap: 8px;
+  gap: 10px;
 }
 
-.capability-list p {
+.capability-card {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: 196px;
+  align-content: space-between;
+  gap: 28px;
   margin: 0;
-  padding: 16px;
+  padding: 18px;
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: color-mix(in srgb, var(--surface) 74%, transparent);
-  font-size: 1.35rem;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--cap-accent, var(--accent)) 18%, transparent), transparent 44%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 88%, transparent), color-mix(in srgb, var(--surface) 70%, transparent));
+  box-shadow: 0 12px 34px color-mix(in srgb, var(--ink) 9%, transparent);
+  transform: translateY(0);
+  transition:
+    border-color 240ms ease,
+    box-shadow 240ms ease,
+    transform 240ms ease,
+    background-color 240ms ease;
+}
+
+.capability-card::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: -1;
+  width: 5px;
+  background: var(--cap-accent, var(--accent));
+  content: "";
+}
+
+.capability-card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 68px;
+  height: 68px;
+  border-left: 1px solid color-mix(in srgb, var(--cap-accent, var(--accent)) 46%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--cap-accent, var(--accent)) 46%, transparent);
+  background:
+    repeating-linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--cap-accent, var(--accent)) 38%, transparent) 0 1px,
+      transparent 1px 8px
+    );
+  opacity: 0.55;
+  content: "";
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+}
+
+.capability-card:nth-child(1),
+.capability-card:nth-child(5) {
+  --cap-accent: var(--accent);
+}
+
+.capability-card:nth-child(2),
+.capability-card:nth-child(6) {
+  --cap-accent: var(--accent-2);
+}
+
+.capability-card:nth-child(3) {
+  --cap-accent: var(--accent-3);
+}
+
+.capability-card:nth-child(4) {
+  --cap-accent: color-mix(in srgb, var(--accent) 48%, var(--accent-2));
+}
+
+.capability-card:hover,
+.capability-card:focus-within {
+  border-color: color-mix(in srgb, var(--cap-accent, var(--accent)) 70%, var(--line));
+  box-shadow: 0 20px 46px color-mix(in srgb, var(--ink) 15%, transparent);
+  transform: translateY(-5px);
+}
+
+.capability-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.capability-card__index,
+.capability-card__tag {
+  color: color-mix(in srgb, var(--ink) 72%, var(--cap-accent, var(--accent)));
+  font-size: 0.72rem;
   font-weight: 850;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
-.capability-list p:nth-child(2n) {
-  color: var(--accent-2);
+.capability-card__index {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--cap-accent, var(--accent)) 58%, var(--line));
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--cap-accent, var(--accent)) 18%, transparent);
+  color: var(--ink);
 }
 
-.capability-list p:nth-child(3n) {
-  color: var(--accent);
+.capability-card__tag {
+  color: var(--muted);
+}
+
+.capability-card h3 {
+  max-width: 11ch;
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.45rem;
+  font-weight: 900;
+  line-height: 0.98;
+}
+
+.capability-card p {
+  max-width: 32ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.42;
 }
 
 .contact {
@@ -630,7 +737,7 @@ body[data-study="field"] .hero__stamp {
 body[data-study="signal"] .site-header,
 body[data-study="signal"] .project__media,
 body[data-study="signal"] .proof-stack div,
-body[data-study="signal"] .capability-list p {
+body[data-study="signal"] .capability-card {
   box-shadow: none;
 }
 
@@ -788,9 +895,13 @@ body[data-study="signal"] .study-switcher button[aria-pressed="true"] {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .capability-list p {
-    min-height: 150px;
-    font-size: 1.75rem;
+  .capability-card {
+    min-height: 230px;
+    padding: 20px;
+  }
+
+  .capability-card h3 {
+    font-size: 1.65rem;
   }
 
   .contact-link {

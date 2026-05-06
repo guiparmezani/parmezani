@@ -118,13 +118,13 @@ SEO/social metadata is generated in `inc/seo.php`.
 Current title:
 
 ```txt
-Guilherme Parmezani | Digital Presence Portfolio
+Guilherme Parmezani | Front-End & WordPress Developer
 ```
 
 Current description:
 
 ```txt
-Portfolio of Guilherme Parmezani, a digital professional building polished/high-level solutions for hospitality, lifestyle, art, business and entertainment brands.
+Senior front-end and WordPress developer building polished, maintainable marketing sites with AI-assisted workflows for faster delivery and sharper execution.
 ```
 
 Social sharing image:
