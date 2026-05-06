@@ -4,32 +4,30 @@
  *
  * @package Parmezani
  */
+
+$defaults = parmezani_home_defaults();
+$about    = parmezani_group_field( 'home_about', $defaults['about'] );
 ?>
 <section class="about section-pad" id="about" aria-labelledby="about-title">
 	<div class="about__statement" data-reveal>
-		<p class="section-kicker"><?php esc_html_e( 'Point Of View', 'parmezani' ); ?></p>
+		<p class="section-kicker"><?php echo esc_html( parmezani_text_value( $about['kicker'] ?? '', $defaults['about']['kicker'] ) ); ?></p>
 		<h2 id="about-title">
-			<?php esc_html_e( 'Websites with atmosphere, structure, and enough restraint to let the work breathe.', 'parmezani' ); ?>
+			<?php echo esc_html( parmezani_text_value( $about['heading'] ?? '', $defaults['about']['heading'] ) ); ?>
 		</h2>
 	</div>
 	<div class="about__grid">
 		<div class="about__copy" data-reveal>
-			<p><?php esc_html_e( 'The portfolio should feel made by a builder who understands front-end craft, brand systems, and the operational realities of WordPress. The direction is visual and tactile, but the page still behaves like a practical sales tool.', 'parmezani' ); ?></p>
-			<p><?php esc_html_e( 'Instead of a generic agency grid, the work is framed as a run of destinations: places to stay, gather, watch, wash, lease, and remember.', 'parmezani' ); ?></p>
+			<?php foreach ( parmezani_rows_value( $about['paragraphs'] ?? array(), $defaults['about']['paragraphs'] ) as $paragraph ) : ?>
+				<p><?php echo esc_html( parmezani_text_value( $paragraph['text'] ?? '' ) ); ?></p>
+			<?php endforeach; ?>
 		</div>
 		<div class="proof-stack" data-reveal>
-			<div>
-				<span><?php esc_html_e( '10+', 'parmezani' ); ?></span>
-				<p><?php esc_html_e( 'years shaping web systems', 'parmezani' ); ?></p>
-			</div>
-			<div>
-				<span><?php esc_html_e( '07', 'parmezani' ); ?></span>
-				<p><?php esc_html_e( 'featured projects in this first pass', 'parmezani' ); ?></p>
-			</div>
-			<div>
-				<span><?php esc_html_e( 'WP', 'parmezani' ); ?></span>
-				<p><?php esc_html_e( 'designed to translate into template parts', 'parmezani' ); ?></p>
-			</div>
+			<?php foreach ( parmezani_rows_value( $about['stats'] ?? array(), $defaults['about']['stats'] ) as $stat ) : ?>
+				<div>
+					<span><?php echo esc_html( parmezani_text_value( $stat['value'] ?? '' ) ); ?></span>
+					<p><?php echo esc_html( parmezani_text_value( $stat['label'] ?? '' ) ); ?></p>
+				</div>
+			<?php endforeach; ?>
 		</div>
 	</div>
 </section>

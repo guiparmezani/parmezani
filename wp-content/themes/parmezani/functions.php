@@ -9,6 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+require_once get_theme_file_path( 'inc/acf.php' );
+require_once get_theme_file_path( 'inc/content.php' );
 require_once get_theme_file_path( 'inc/project-data.php' );
 
 function parmezani_setup(): void {
@@ -47,3 +49,17 @@ function parmezani_enqueue_assets(): void {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'parmezani_enqueue_assets' );
+
+function parmezani_favicon(): void {
+	if ( has_site_icon() ) {
+		return;
+	}
+
+	$favicon = get_theme_file_uri( 'assets/images/brand/favicon.svg' );
+	?>
+	<link rel="icon" href="<?php echo esc_url( $favicon ); ?>" type="image/svg+xml">
+	<?php
+}
+add_action( 'wp_head', 'parmezani_favicon', 1 );
+add_action( 'admin_head', 'parmezani_favicon', 1 );
+add_action( 'login_head', 'parmezani_favicon', 1 );
