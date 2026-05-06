@@ -19,9 +19,9 @@ function parmezani_home_defaults(): array {
 			'primary_button_url'     => '#work',
 			'secondary_button_label' => 'Start a conversation',
 			'secondary_button_url'   => 'mailto:gui@bodedigital.com',
-			'card_one_image'         => 'assets/images/projects/camel-club.jpg',
-			'card_two_image'         => 'assets/images/projects/manchester.jpg',
-			'card_three_image'       => 'assets/images/projects/soap.png',
+			'card_one_image'         => 'assets/images/projects/screenshots/camel-club-screenshot.jpg',
+			'card_two_image'         => 'assets/images/projects/screenshots/manchester-screenshot.jpg',
+			'card_three_image'       => 'assets/images/projects/screenshots/soap-screenshot.jpg',
 			'stamp_number'           => '07',
 			'stamp_label'            => 'sites',
 		),
@@ -68,8 +68,8 @@ function parmezani_home_defaults(): array {
 			),
 		),
 		'contact'           => array(
-			'image'     => 'assets/images/projects/albatross-detail.jpg',
-			'image_alt' => 'Portfolio detail imagery',
+			'image'     => 'assets/images/projects/screenshots/albatross-screenshot.jpg',
+			'image_alt' => 'Hotel Albatross 1881 website screenshot',
 			'kicker'    => 'Contact',
 			'heading'   => 'Ready for the next build.',
 			'links'     => array(
