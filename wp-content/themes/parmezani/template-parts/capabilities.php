@@ -4,18 +4,18 @@
  *
  * @package Parmezani
  */
+
+$defaults     = parmezani_home_defaults();
+$capabilities = parmezani_group_field( 'home_capabilities', $defaults['capabilities'] );
 ?>
 <section class="capabilities section-pad" aria-labelledby="capabilities-title">
 	<div class="section-head" data-reveal>
-		<p class="section-kicker"><?php esc_html_e( 'Capabilities', 'parmezani' ); ?></p>
-		<h2 id="capabilities-title"><?php esc_html_e( 'A compact build system for polished marketing sites.', 'parmezani' ); ?></h2>
+		<p class="section-kicker"><?php echo esc_html( parmezani_text_value( $capabilities['kicker'] ?? '', $defaults['capabilities']['kicker'] ) ); ?></p>
+		<h2 id="capabilities-title"><?php echo esc_html( parmezani_text_value( $capabilities['heading'] ?? '', $defaults['capabilities']['heading'] ) ); ?></h2>
 	</div>
 	<div class="capability-list" data-reveal>
-		<p><?php esc_html_e( 'Design systems', 'parmezani' ); ?></p>
-		<p><?php esc_html_e( 'WordPress themes', 'parmezani' ); ?></p>
-		<p><?php esc_html_e( 'GSAP motion', 'parmezani' ); ?></p>
-		<p><?php esc_html_e( 'Responsive UI', 'parmezani' ); ?></p>
-		<p><?php esc_html_e( 'ACF architecture', 'parmezani' ); ?></p>
-		<p><?php esc_html_e( 'Performance passes', 'parmezani' ); ?></p>
+		<?php foreach ( parmezani_rows_value( $capabilities['items'] ?? array(), $defaults['capabilities']['items'] ) as $item ) : ?>
+			<p><?php echo esc_html( parmezani_text_value( $item['text'] ?? '' ) ); ?></p>
+		<?php endforeach; ?>
 	</div>
 </section>

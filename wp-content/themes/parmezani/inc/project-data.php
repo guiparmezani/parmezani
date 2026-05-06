@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-function parmezani_projects(): array {
+function parmezani_project_defaults(): array {
 	return array(
 		array(
 			'number'            => '01',
@@ -21,7 +21,7 @@ function parmezani_projects(): array {
 			'meta'              => 'Hospitality / WordPress',
 			'creative_director' => 'Rob Bode',
 			'studio'            => 'Bode Digital',
-			'modifier'          => '',
+			'layout'            => 'default',
 		),
 		array(
 			'number'            => '02',
@@ -33,7 +33,7 @@ function parmezani_projects(): array {
 			'meta'              => 'Membership / Lifestyle',
 			'creative_director' => 'Rob Bode',
 			'studio'            => 'Bode Digital',
-			'modifier'          => ' project--wide',
+			'layout'            => 'wide',
 		),
 		array(
 			'number'            => '03',
@@ -45,7 +45,7 @@ function parmezani_projects(): array {
 			'meta'              => 'Hotel / Dining / Events',
 			'creative_director' => 'Rob Bode',
 			'studio'            => 'Bode Digital',
-			'modifier'          => '',
+			'layout'            => 'default',
 		),
 		array(
 			'number'            => '04',
@@ -57,7 +57,7 @@ function parmezani_projects(): array {
 			'meta'              => 'Film / Portfolio',
 			'creative_director' => 'Rob Bode',
 			'studio'            => 'Bode Digital',
-			'modifier'          => '',
+			'layout'            => 'default',
 		),
 		array(
 			'number'            => '05',
@@ -69,7 +69,7 @@ function parmezani_projects(): array {
 			'meta'              => 'Venue / Residential / Culture',
 			'creative_director' => 'Rob Bode',
 			'studio'            => 'Bode Digital',
-			'modifier'          => ' project--wide',
+			'layout'            => 'wide',
 		),
 		array(
 			'number'            => '06',
@@ -81,7 +81,7 @@ function parmezani_projects(): array {
 			'meta'              => 'Service / Brand Site',
 			'creative_director' => 'Rob Bode',
 			'studio'            => 'Bode Digital',
-			'modifier'          => ' project--contain',
+			'layout'            => 'contain',
 		),
 		array(
 			'number'            => '07',
@@ -93,7 +93,57 @@ function parmezani_projects(): array {
 			'meta'              => 'Residential / Leasing',
 			'creative_director' => 'Rob Bode',
 			'studio'            => 'Bode Digital',
-			'modifier'          => '',
+			'layout'            => 'default',
 		),
+	);
+}
+
+function parmezani_project_modifier( string $layout ): string {
+	return match ( $layout ) {
+		'wide'    => ' project--wide',
+		'contain' => ' project--contain',
+		default   => '',
+	};
+}
+
+function parmezani_projects(): array {
+	$defaults = parmezani_project_defaults();
+	$projects = parmezani_home_field( 'home_projects', $defaults );
+
+	if ( ! is_array( $projects ) || array() === $projects ) {
+		$projects = $defaults;
+	}
+
+	return array_values(
+		array_map(
+			static function ( array $project, int $index ) use ( $defaults ): array {
+				$fallback = $defaults[ $index ] ?? array(
+					'number'            => '',
+					'title'             => '',
+					'url'               => '',
+					'image'             => '',
+					'alt'               => '',
+					'summary'           => '',
+					'meta'              => '',
+					'creative_director' => '',
+					'studio'            => '',
+					'layout'            => 'default',
+				);
+				foreach ( $project as $key => $value ) {
+					if ( ! parmezani_is_empty_acf_value( $value ) ) {
+						$fallback[ $key ] = $value;
+					}
+				}
+
+				$project  = $fallback;
+				$layout   = parmezani_text_value( $project['layout'] ?? '', $fallback['layout'] ?? 'default' );
+
+				$project['modifier'] = parmezani_project_modifier( $layout );
+
+				return $project;
+			},
+			$projects,
+			array_keys( $projects )
+		)
 	);
 }

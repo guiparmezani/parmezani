@@ -4,16 +4,25 @@
  *
  * @package Parmezani
  */
+
+$defaults      = parmezani_home_defaults();
+$contact       = parmezani_group_field( 'home_contact', $defaults['contact'] );
+$contact_image = parmezani_image_data( $contact['image'] ?? '', $defaults['contact']['image'], parmezani_text_value( $contact['image_alt'] ?? '', $defaults['contact']['image_alt'] ) );
 ?>
 <section class="contact section-pad" id="contact" aria-labelledby="contact-title">
 	<div class="contact__media" data-reveal>
-		<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/projects/albatross-detail.jpg' ) ); ?>" alt="<?php esc_attr_e( 'Portfolio detail imagery', 'parmezani' ); ?>">
+		<img src="<?php echo esc_url( $contact_image['src'] ); ?>" alt="<?php echo esc_attr( $contact_image['alt'] ); ?>">
 	</div>
 	<div class="contact__copy" data-reveal>
-		<p class="section-kicker"><?php esc_html_e( 'Contact', 'parmezani' ); ?></p>
-		<h2 id="contact-title"><?php esc_html_e( 'Ready for the next build.', 'parmezani' ); ?></h2>
-		<a class="contact-link" href="mailto:gui@bodedigital.com">gui@bodedigital.com</a>
-		<a class="contact-link" href="https://github.com/guiparmezani" target="_blank" rel="noreferrer">github.com/guiparmezani</a>
-		<a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><?php esc_html_e( 'LinkedIn', 'parmezani' ); ?></a>
+		<p class="section-kicker"><?php echo esc_html( parmezani_text_value( $contact['kicker'] ?? '', $defaults['contact']['kicker'] ) ); ?></p>
+		<h2 id="contact-title"><?php echo esc_html( parmezani_text_value( $contact['heading'] ?? '', $defaults['contact']['heading'] ) ); ?></h2>
+		<?php foreach ( parmezani_rows_value( $contact['links'] ?? array(), $defaults['contact']['links'] ) as $link ) : ?>
+			<?php
+			$link_url   = parmezani_text_value( $link['url'] ?? '' );
+			$link_label = parmezani_text_value( $link['label'] ?? '', $link_url );
+			$is_new_tab = ! empty( $link['new_tab'] );
+			?>
+			<a class="contact-link" href="<?php echo esc_url( $link_url ); ?>"<?php echo $is_new_tab ? ' target="_blank" rel="noreferrer"' : ''; ?>><?php echo esc_html( $link_label ); ?></a>
+		<?php endforeach; ?>
 	</div>
 </section>

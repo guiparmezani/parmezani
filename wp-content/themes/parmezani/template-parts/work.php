@@ -19,7 +19,8 @@ $projects = parmezani_projects();
 				<a href="<?php echo esc_url( $project['url'] ); ?>" target="_blank" rel="noreferrer">
 					<div class="project__media">
 						<div class="project__media-inner">
-							<img src="<?php echo esc_url( get_theme_file_uri( $project['image'] ) ); ?>" alt="<?php echo esc_attr( $project['alt'] ); ?>">
+							<?php $project_image = parmezani_image_data( $project['image'] ?? '', '', $project['alt'] ?? '' ); ?>
+							<img src="<?php echo esc_url( $project_image['src'] ); ?>" alt="<?php echo esc_attr( $project_image['alt'] ); ?>">
 						</div>
 					</div>
 					<div class="project__body">

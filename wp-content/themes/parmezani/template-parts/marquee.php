@@ -4,20 +4,16 @@
  *
  * @package Parmezani
  */
+
+$defaults      = parmezani_home_defaults();
+$marquee_items = parmezani_rows_value( parmezani_home_field( 'home_marquee_items', $defaults['marquee_items'] ), $defaults['marquee_items'] );
 ?>
 <section class="marquee" aria-label="<?php esc_attr_e( 'Project categories', 'parmezani' ); ?>">
 	<div>
-		<span><?php esc_html_e( 'Hospitality', 'parmezani' ); ?></span>
-		<span><?php esc_html_e( 'Membership', 'parmezani' ); ?></span>
-		<span><?php esc_html_e( 'Entertainment', 'parmezani' ); ?></span>
-		<span><?php esc_html_e( 'Residential', 'parmezani' ); ?></span>
-		<span><?php esc_html_e( 'Brand Systems', 'parmezani' ); ?></span>
-		<span><?php esc_html_e( 'WordPress', 'parmezani' ); ?></span>
-		<span><?php esc_html_e( 'Hospitality', 'parmezani' ); ?></span>
-		<span><?php esc_html_e( 'Membership', 'parmezani' ); ?></span>
-		<span><?php esc_html_e( 'Entertainment', 'parmezani' ); ?></span>
-		<span><?php esc_html_e( 'Residential', 'parmezani' ); ?></span>
-		<span><?php esc_html_e( 'Brand Systems', 'parmezani' ); ?></span>
-		<span><?php esc_html_e( 'WordPress', 'parmezani' ); ?></span>
+		<?php for ( $i = 0; $i < 2; $i++ ) : ?>
+			<?php foreach ( $marquee_items as $item ) : ?>
+				<span><?php echo esc_html( parmezani_text_value( $item['text'] ?? '' ) ); ?></span>
+			<?php endforeach; ?>
+		<?php endfor; ?>
 	</div>
 </section>
