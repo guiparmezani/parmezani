@@ -1,0 +1,22 @@
+{
+  "name": "parmezani-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "sass wp-content/themes/parmezani/src/scss/main.scss wp-content/themes/parmezani/assets/css/main.css --style=compressed --source-map",
+    "build:js": "esbuild wp-content/themes/parmezani/src/js/main.js --bundle --outfile=wp-content/themes/parmezani/assets/js/main.js --sourcemap",
+    "watch:css": "sass --watch wp-content/themes/parmezani/src/scss/main.scss:wp-content/themes/parmezani/assets/css/main.css --style=expanded --source-map",
+    "watch:js": "esbuild wp-content/themes/parmezani/src/js/main.js --bundle --outfile=wp-content/themes/parmezani/assets/js/main.js --sourcemap --watch",
+    "watch-bs": "concurrently -k \"npm:watch:css\" \"npm:watch:js\" \"browser-sync start --config browser-sync.config.cjs\""
+  },
+  "dependencies": {
+    "gsap": "^3.12.5"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.3",
+    "concurrently": "^9.1.2",
+    "esbuild": "^0.25.0",
+    "sass": "^1.85.0"
+  }
+}

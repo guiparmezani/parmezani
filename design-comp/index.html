@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guilherme Parmezani Portfolio Comp</title>
+    <meta
+      name="description"
+      content="Responsive portfolio design comp with three visual studies for Guilherme Parmezani."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-study="atelier">
+    <a class="skip-link" href="#work">Skip to work</a>
+
+    <header class="site-header" data-reveal>
+      <a class="brand-mark" href="#top" aria-label="Guilherme Parmezani home">
+        <span>GP</span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="study-switcher" aria-label="Design study selector">
+      <button type="button" data-study-target="atelier" aria-pressed="true">01</button>
+      <button type="button" data-study-target="field" aria-pressed="false">02</button>
+      <button type="button" data-study-target="signal" aria-pressed="false">03</button>
+    </div>
+
+    <main id="top">
+      <section class="hero section-pad" aria-labelledby="hero-title">
+        <div class="hero__copy" data-reveal>
+          <p class="eyebrow"><span></span> Available for selected web builds</p>
+          <h1 id="hero-title">
+            Digital work for places people <em>remember.</em>
+          </h1>
+          <p class="hero__intro">
+            A mobile-first portfolio direction for hospitality, residential,
+            entertainment, and lifestyle websites built with WordPress,
+            animation, and sharp front-end execution.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#work">View projects</a>
+            <a class="button button--ghost" href="mailto:gui@bodedigital.com">Start a conversation</a>
+          </div>
+        </div>
+
+        <div class="hero__stage" aria-hidden="true" data-reveal>
+          <figure class="hero-card hero-card--one">
+            <img src="assets/projects/camel-club.jpg" alt="">
+          </figure>
+          <figure class="hero-card hero-card--two">
+            <img src="assets/projects/manchester.jpg" alt="">
+          </figure>
+          <figure class="hero-card hero-card--three">
+            <img src="assets/projects/soap.png" alt="">
+          </figure>
+          <div class="hero__stamp">
+            <span>07</span>
+            <small>selected sites</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="marquee" aria-label="Project categories">
+        <div>
+          <span>Hospitality</span>
+          <span>Membership</span>
+          <span>Entertainment</span>
+          <span>Residential</span>
+          <span>Brand Systems</span>
+          <span>WordPress</span>
+        </div>
+      </section>
+
+      <section class="work section-pad" id="work" aria-labelledby="work-title">
+        <div class="section-head" data-reveal>
+          <p class="section-kicker">Selected Work</p>
+          <h2 id="work-title">Seven projects, one portfolio rhythm.</h2>
+        </div>
+
+        <div class="project-list">
+          <article class="project" data-reveal>
+            <a href="https://hotelalbatross1881.com/" target="_blank" rel="noreferrer">
+              <div class="project__media">
+                <img src="assets/projects/albatross.jpg" alt="Hotel Albatross 1881 website imagery">
+              </div>
+              <div class="project__body">
+                <p class="project__number">01</p>
+                <h3>Hotel Albatross 1881</h3>
+                <p>Historic hotel presence with a coastal editorial feel.</p>
+                <span>Hospitality / WordPress</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project project--wide" data-reveal>
+            <a href="https://camel.club/" target="_blank" rel="noreferrer">
+              <div class="project__media">
+                <img src="assets/projects/camel-club-detail.jpg" alt="Camel Club interior website imagery">
+              </div>
+              <div class="project__body">
+                <p class="project__number">02</p>
+                <h3>Camel Club</h3>
+                <p>Private-club storytelling for layered rooms, amenities, and membership interest.</p>
+                <span>Membership / Lifestyle</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project" data-reveal>
+            <a href="https://themanchesterky.com/" target="_blank" rel="noreferrer">
+              <div class="project__media">
+                <img src="assets/projects/manchester-detail.jpg" alt="The Manchester website imagery">
+              </div>
+              <div class="project__body">
+                <p class="project__number">03</p>
+                <h3>The Manchester</h3>
+                <p>Hotel and culinary ecosystem with a refined southern point of view.</p>
+                <span>Hotel / Dining / Events</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project" data-reveal>
+            <a href="https://revelator.tv/" target="_blank" rel="noreferrer">
+              <div class="project__media">
+                <img src="assets/projects/newrevelator.jpg" alt="Revelator video production website imagery">
+              </div>
+              <div class="project__body">
+                <p class="project__number">04</p>
+                <h3>Revelator</h3>
+                <p>Director-led production portfolio with fast visual scanning.</p>
+                <span>Film / Portfolio</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project project--wide" data-reveal>
+            <a href="https://livetroubadour.com/" target="_blank" rel="noreferrer">
+              <div class="project__media">
+                <img src="assets/projects/troubadour.jpg" alt="Troubadour website imagery">
+              </div>
+              <div class="project__body">
+                <p class="project__number">05</p>
+                <h3>Troubadour</h3>
+                <p>Live destination site balancing place, programming, and conversion paths.</p>
+                <span>Venue / Residential / Culture</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project" data-reveal>
+            <a href="https://soaplaundrylounge.com/" target="_blank" rel="noreferrer">
+              <div class="project__media project__media--contain">
+                <img src="assets/projects/soap-detail.png" alt="SOAP Laundry Lounge brand imagery">
+              </div>
+              <div class="project__body">
+                <p class="project__number">06</p>
+                <h3>SOAP Laundry Lounge</h3>
+                <p>Brand-forward utility site for a cleaner, friendlier local service.</p>
+                <span>Service / Brand Site</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project" data-reveal>
+            <a href="https://ramblertempe.com/" target="_blank" rel="noreferrer">
+              <div class="project__media">
+                <img src="assets/projects/lv-tempe.jpeg" alt="Rambler Tempe website imagery">
+              </div>
+              <div class="project__body">
+                <p class="project__number">07</p>
+                <h3>Rambler Tempe</h3>
+                <p>High-energy student-housing leasing experience with fast information access.</p>
+                <span>Residential / Leasing</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="about section-pad" id="about" aria-labelledby="about-title">
+        <div class="about__statement" data-reveal>
+          <p class="section-kicker">Point Of View</p>
+          <h2 id="about-title">
+            Websites with atmosphere, structure, and enough restraint to let the work breathe.
+          </h2>
+        </div>
+        <div class="about__grid">
+          <div class="about__copy" data-reveal>
+            <p>
+              The portfolio should feel made by a builder who understands
+              front-end craft, brand systems, and the operational realities of
+              WordPress. The direction is visual and tactile, but the page still
+              behaves like a practical sales tool.
+            </p>
+            <p>
+              Instead of a generic agency grid, the work is framed as a run of
+              destinations: places to stay, gather, watch, wash, lease, and
+              remember.
+            </p>
+          </div>
+          <div class="proof-stack" data-reveal>
+            <div>
+              <span>10+</span>
+              <p>years shaping web systems</p>
+            </div>
+            <div>
+              <span>07</span>
+              <p>featured projects in this first pass</p>
+            </div>
+            <div>
+              <span>WP</span>
+              <p>designed to translate into template parts</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="capabilities section-pad" aria-labelledby="capabilities-title">
+        <div class="section-head" data-reveal>
+          <p class="section-kicker">Capabilities</p>
+          <h2 id="capabilities-title">A compact build system for polished marketing sites.</h2>
+        </div>
+        <div class="capability-list" data-reveal>
+          <p>Design systems</p>
+          <p>WordPress themes</p>
+          <p>GSAP motion</p>
+          <p>Responsive UI</p>
+          <p>ACF architecture</p>
+          <p>Performance passes</p>
+        </div>
+      </section>
+
+      <section class="contact section-pad" id="contact" aria-labelledby="contact-title">
+        <div class="contact__media" data-reveal>
+          <img src="assets/projects/albatross-detail.jpg" alt="Portfolio detail imagery">
+        </div>
+        <div class="contact__copy" data-reveal>
+          <p class="section-kicker">Contact</p>
+          <h2 id="contact-title">Ready for the next build.</h2>
+          <a class="contact-link" href="mailto:gui@bodedigital.com">gui@bodedigital.com</a>
+          <a class="contact-link" href="https://github.com/guiparmezani" target="_blank" rel="noreferrer">
+            github.com/guiparmezani
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Guilherme Parmezani</p>
+      <p>Portfolio direction comp / 2026</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
