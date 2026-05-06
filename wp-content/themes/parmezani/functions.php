@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once get_theme_file_path( 'inc/acf.php' );
 require_once get_theme_file_path( 'inc/content.php' );
 require_once get_theme_file_path( 'inc/project-data.php' );
+require_once get_theme_file_path( 'inc/seo.php' );
 
 function parmezani_setup(): void {
 	add_theme_support( 'title-tag' );
