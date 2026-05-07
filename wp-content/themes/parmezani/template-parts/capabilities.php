@@ -64,6 +64,7 @@ $capability_details = array(
 				'tag'         => __( 'Capability', 'parmezani' ),
 				'description' => '',
 			);
+			$description = parmezani_text_value( $item['description'] ?? '', $details['description'] );
 			?>
 			<article class="capability-card">
 				<div class="capability-card__top">
@@ -71,8 +72,8 @@ $capability_details = array(
 					<span class="capability-card__tag"><?php echo esc_html( $details['tag'] ); ?></span>
 				</div>
 				<h3><?php echo esc_html( $title ); ?></h3>
-				<?php if ( '' !== $details['description'] ) : ?>
-					<p><?php echo esc_html( $details['description'] ); ?></p>
+				<?php if ( '' !== $description ) : ?>
+					<p><?php echo esc_html( $description ); ?></p>
 				<?php endif; ?>
 			</article>
 		<?php endforeach; ?>

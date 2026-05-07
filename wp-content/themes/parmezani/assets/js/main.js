@@ -6700,38 +6700,63 @@
     });
   });
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function animateContactUnderline(link, isActive) {
+    const underline = link.querySelector(".contact-link__underline");
+    if (!underline) return;
+    gsapWithCSS.set(underline, { transformOrigin: isActive ? "left center" : "right center" });
+    gsapWithCSS.to(underline, {
+      scaleX: isActive ? 1 : 0,
+      duration: reducedMotion ? 0 : 0.34,
+      ease: isActive ? "power3.out" : "power2.inOut",
+      overwrite: true
+    });
+  }
+  document.querySelectorAll(".contact-link").forEach((link) => {
+    link.addEventListener("mouseenter", () => animateContactUnderline(link, true));
+    link.addEventListener("mouseleave", () => animateContactUnderline(link, false));
+    link.addEventListener("focus", () => animateContactUnderline(link, true));
+    link.addEventListener("blur", () => animateContactUnderline(link, false));
+  });
   if (!reducedMotion) {
     gsapWithCSS.registerPlugin(ScrollTrigger2);
     gsapWithCSS.from(".site-header", {
-      y: -18,
+      y: -24,
       opacity: 0,
-      duration: 0.7,
+      duration: 0.95,
       ease: "power3.out"
     });
     gsapWithCSS.utils.toArray("[data-reveal]").forEach((element) => {
       if (element.classList.contains("site-header")) return;
       if (element.classList.contains("capability-list")) return;
       gsapWithCSS.from(element, {
-        y: 28,
+        y: 46,
         opacity: 0,
-        duration: 0.8,
+        duration: 1.2,
         ease: "power3.out",
         scrollTrigger: {
           trigger: element,
-          start: "top 82%"
+          start: "top 84%"
         }
       });
     });
-    gsapWithCSS.from(".capability-card", {
-      y: 34,
+    gsapWithCSS.from(".capability-list", {
+      y: 52,
       opacity: 0,
-      rotateZ: -1.2,
-      duration: 0.75,
+      duration: 1.1,
       ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".capability-list",
+        start: "top 84%"
+      }
+    });
+    gsapWithCSS.from(".capability-card", {
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.out",
       stagger: 0.08,
       scrollTrigger: {
         trigger: ".capability-list",
-        start: "top 82%"
+        start: "top 84%"
       }
     });
     gsapWithCSS.to(".hero-card--one", {

@@ -22,7 +22,12 @@ $contact_image = parmezani_image_data( $contact['image'] ?? '', $defaults['conta
 			$link_label = parmezani_text_value( $link['label'] ?? '', $link_url );
 			$is_new_tab = ! empty( $link['new_tab'] );
 			?>
-			<a class="contact-link" href="<?php echo esc_url( $link_url ); ?>"<?php echo $is_new_tab ? ' target="_blank" rel="noreferrer"' : ''; ?>><?php echo esc_html( $link_label ); ?></a>
+			<a class="contact-link" href="<?php echo esc_url( $link_url ); ?>"<?php echo $is_new_tab ? ' target="_blank" rel="noreferrer"' : ''; ?>>
+				<span class="contact-link__label">
+					<?php echo esc_html( $link_label ); ?>
+					<span class="contact-link__underline" aria-hidden="true"></span>
+				</span>
+			</a>
 		<?php endforeach; ?>
 	</div>
 </section>

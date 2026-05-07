@@ -64,3 +64,23 @@ function parmezani_favicon(): void {
 add_action( 'wp_head', 'parmezani_favicon', 1 );
 add_action( 'admin_head', 'parmezani_favicon', 1 );
 add_action( 'login_head', 'parmezani_favicon', 1 );
+
+function parmezani_enqueue_login_assets(): void {
+	wp_enqueue_style(
+		'parmezani-login',
+		get_theme_file_uri( 'assets/css/login.css' ),
+		array(),
+		parmezani_asset_version( 'assets/css/login.css' )
+	);
+}
+add_action( 'login_enqueue_scripts', 'parmezani_enqueue_login_assets' );
+
+function parmezani_login_header_url(): string {
+	return home_url( '/' );
+}
+add_filter( 'login_headerurl', 'parmezani_login_header_url' );
+
+function parmezani_login_header_text(): string {
+	return parmezani_seo_site_name();
+}
+add_filter( 'login_headertext', 'parmezani_login_header_text' );

@@ -43,13 +43,33 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+function animateContactUnderline(link, isActive) {
+  const underline = link.querySelector(".contact-link__underline");
+  if (!underline) return;
+
+  gsap.set(underline, { transformOrigin: isActive ? "left center" : "right center" });
+  gsap.to(underline, {
+    scaleX: isActive ? 1 : 0,
+    duration: reducedMotion ? 0 : 0.34,
+    ease: isActive ? "power3.out" : "power2.inOut",
+    overwrite: true,
+  });
+}
+
+document.querySelectorAll(".contact-link").forEach((link) => {
+  link.addEventListener("mouseenter", () => animateContactUnderline(link, true));
+  link.addEventListener("mouseleave", () => animateContactUnderline(link, false));
+  link.addEventListener("focus", () => animateContactUnderline(link, true));
+  link.addEventListener("blur", () => animateContactUnderline(link, false));
+});
+
 if (!reducedMotion) {
   gsap.registerPlugin(ScrollTrigger);
 
   gsap.from(".site-header", {
-    y: -18,
+    y: -24,
     opacity: 0,
-    duration: 0.7,
+    duration: 0.95,
     ease: "power3.out",
   });
 
@@ -58,27 +78,36 @@ if (!reducedMotion) {
     if (element.classList.contains("capability-list")) return;
 
     gsap.from(element, {
-      y: 28,
+      y: 46,
       opacity: 0,
-      duration: 0.8,
+      duration: 1.2,
       ease: "power3.out",
       scrollTrigger: {
         trigger: element,
-        start: "top 82%",
+        start: "top 84%",
       },
     });
   });
 
-  gsap.from(".capability-card", {
-    y: 34,
+  gsap.from(".capability-list", {
+    y: 52,
     opacity: 0,
-    rotateZ: -1.2,
-    duration: 0.75,
+    duration: 1.1,
     ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".capability-list",
+      start: "top 84%",
+    },
+  });
+
+  gsap.from(".capability-card", {
+    opacity: 0,
+    duration: 0.8,
+    ease: "power2.out",
     stagger: 0.08,
     scrollTrigger: {
       trigger: ".capability-list",
-      start: "top 82%",
+      start: "top 84%",
     },
   });
 

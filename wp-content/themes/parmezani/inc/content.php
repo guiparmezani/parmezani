@@ -62,12 +62,30 @@ function parmezani_home_defaults(): array {
 			'kicker'  => 'Capabilities',
 			'heading' => 'The front-end craft behind polished marketing sites.',
 			'items'   => array(
-				array( 'text' => 'Design-to-code implementation' ),
-				array( 'text' => 'Theme development' ),
-				array( 'text' => 'ACF content architecture' ),
-				array( 'text' => 'AI-assisted development workflow' ),
-				array( 'text' => 'GSAP motion systems' ),
-				array( 'text' => 'Performance and maintainability' ),
+				array(
+					'text'        => 'Design-to-code implementation',
+					'description' => 'Faithful translation of ambitious creative direction into responsive, production-ready UI.',
+				),
+				array(
+					'text'        => 'Theme development',
+					'description' => 'Custom templates, structured components, and durable front-end systems for brand sites.',
+				),
+				array(
+					'text'        => 'ACF content architecture',
+					'description' => 'Flexible editing models that keep polished pages manageable after launch.',
+				),
+				array(
+					'text'        => 'AI-assisted development workflow',
+					'description' => 'Modern coding tools used with senior review to speed builds and sharpen execution.',
+				),
+				array(
+					'text'        => 'GSAP motion systems',
+					'description' => 'Purposeful reveal, scroll, and interaction details that make pages feel premium.',
+				),
+				array(
+					'text'        => 'Performance and maintainability',
+					'description' => 'Responsive testing, tuning passes, and handoff details built for real content teams.',
+				),
 			),
 		),
 		'contact'           => array(
