@@ -1,0 +1,63 @@
+name: parmezani
+
+services:
+  db:
+    image: mariadb:11.8
+    restart: unless-stopped
+    env_file:
+      - .env.production
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          mariadb-admin ping -h 127.0.0.1 -u"$${MARIADB_USER}" -p"$${MARIADB_PASSWORD}" --silent
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  wordpress:
+    image: wordpress:6.9.4-php8.4-apache
+    restart: unless-stopped
+    env_file:
+      - .env.production
+    environment:
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME', 'https://parmezani.com');
+        define('WP_SITEURL', 'https://parmezani.com');
+        define('FORCE_SSL_ADMIN', true);
+        define('DISALLOW_FILE_EDIT', true);
+        define('WP_ENVIRONMENT_TYPE', 'production');
+        if (isset($$_SERVER['HTTP_X_FORWARDED_PROTO']) && $$_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+            $$_SERVER['HTTPS'] = 'on';
+        }
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+    networks:
+      default:
+      public_proxy:
+        aliases:
+          - parmezani-wordpress
+    depends_on:
+      db:
+        condition: service_healthy
+    expose:
+      - "80"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          php -r 'exit(@fsockopen("127.0.0.1",80)?0:1);'
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  db_data:
+
+networks:
+  public_proxy:
+    external: true

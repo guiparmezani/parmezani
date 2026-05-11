@@ -4,6 +4,7 @@ node_modules/
 dist/
 wp-config.php
 .env
+.env.production
 *.sql
 *.sqlite
 *.zip

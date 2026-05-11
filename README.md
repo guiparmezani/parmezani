@@ -111,6 +111,74 @@ wp-content/themes/parmezani/assets/images/projects/screenshots/
 
 The local WordPress Media Library also has imported copies assigned to the Home page ACF image fields. Those media-library assignments live in the local database/uploads and are not fully represented by git.
 
+## Vultr VPS Deployment
+
+Production is served from the Vultr VPS behind the shared Caddy proxy:
+
+```txt
+https://parmezani.com
+https://www.parmezani.com -> redirects to https://parmezani.com
+```
+
+Server access:
+
+```sh
+ssh vultr
+```
+
+Current production layout:
+
+```txt
+Local source: /Users/gparmezani/Sites/parmezani
+VPS app path: /opt/parmezani
+VPS Compose file: /opt/parmezani/docker-compose.production.yml
+Shared proxy project: /opt/proxy/docker-compose.yml
+Shared proxy network: public_proxy
+Caddy route: /opt/caddy/sites/parmezani.caddy
+```
+
+This repo keeps the production Compose source in:
+
+```txt
+docker-compose.production.yml
+```
+
+Production secrets are not committed. The real environment file lives only on
+the VPS:
+
+```txt
+/opt/parmezani/.env.production
+```
+
+The WordPress service joins `public_proxy` with this alias:
+
+```txt
+parmezani-wordpress
+```
+
+Caddy routes `parmezani.com` to `parmezani-wordpress:80`. The MariaDB service
+stays on the private Compose network only and should not join `public_proxy` or
+publish host ports.
+
+Deploy from the VPS app path:
+
+```sh
+ssh vultr 'cd /opt/parmezani && docker compose -f docker-compose.production.yml up -d'
+```
+
+Validate Caddy before reloading routing changes:
+
+```sh
+ssh vultr 'docker exec proxy-caddy-1 caddy validate --config /etc/caddy/Caddyfile'
+ssh vultr 'docker exec proxy-caddy-1 caddy reload --config /etc/caddy/Caddyfile'
+```
+
+Smoke-test the origin route through local Caddy:
+
+```sh
+ssh vultr 'curl -skI --resolve parmezani.com:443:127.0.0.1 https://parmezani.com/'
+```
+
 ## SEO And Sharing
 
 SEO/social metadata is generated in `inc/seo.php`.
