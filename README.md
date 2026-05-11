@@ -123,7 +123,7 @@ https://www.parmezani.com -> redirects to https://parmezani.com
 Server access:
 
 ```sh
-ssh vultr
+ssh parmavps
 ```
 
 Current production layout:
@@ -163,20 +163,20 @@ publish host ports.
 Deploy from the VPS app path:
 
 ```sh
-ssh vultr 'cd /opt/parmezani && docker compose -f docker-compose.production.yml up -d'
+ssh parmavps 'cd /opt/parmezani && docker compose -f docker-compose.production.yml up -d'
 ```
 
 Validate Caddy before reloading routing changes:
 
 ```sh
-ssh vultr 'docker exec proxy-caddy-1 caddy validate --config /etc/caddy/Caddyfile'
-ssh vultr 'docker exec proxy-caddy-1 caddy reload --config /etc/caddy/Caddyfile'
+ssh parmavps 'docker exec proxy-caddy-1 caddy validate --config /etc/caddy/Caddyfile'
+ssh parmavps 'docker exec proxy-caddy-1 caddy reload --config /etc/caddy/Caddyfile'
 ```
 
 Smoke-test the origin route through local Caddy:
 
 ```sh
-ssh vultr 'curl -skI --resolve parmezani.com:443:127.0.0.1 https://parmezani.com/'
+ssh parmavps 'curl -skI --resolve parmezani.com:443:127.0.0.1 https://parmezani.com/'
 ```
 
 ## SEO And Sharing
